@@ -1,1 +1,1854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Letter For Rocio ♡</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    background:
+        radial-gradient(circle at 10% 10%, #ffd1e1 0%, transparent 25%),
+        radial-gradient(circle at 90% 15%, #ffe0eb 0%, transparent 25%),
+        radial-gradient(circle at 15% 90%, #ffd8e7 0%, transparent 30%),
+        radial-gradient(circle at 85% 85%, #ffd0e1 0%, transparent 30%),
+        #fff0f6;
+
+    color: #542d3a;
+
+    overflow-x: hidden;
+}
+
+
+/* ========================================
+   FLOATING DECORATIONS
+   ======================================== */
+
+.decorations {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+
+.decoration {
+    position: absolute;
+
+    user-select: none;
+
+    animation:
+        floatAround var(--duration) ease-in-out infinite,
+        sway 4s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 4px 6px rgba(160, 70, 100, 0.18));
+
+    opacity: 0.92;
+}
+
+
+.small {
+    font-size: 20px;
+}
+
+.medium {
+    font-size: 32px;
+}
+
+.large {
+    font-size: 48px;
+}
+
+.huge {
+    font-size: 65px;
+}
+
+
+/* ========================================
+   MAIN CONTAINER
+   ======================================== */
+
+.page {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 60px 20px 100px;
+}
+
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.header {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+
+.header-heart {
+    font-size: 75px;
+
+    animation: heartbeat 2s ease-in-out infinite;
+
+    display: inline-block;
+}
+
+
+h1 {
+    font-size: clamp(42px, 8vw, 75px);
+
+    color: #c94f75;
+
+    margin: 15px 0;
+
+    text-shadow:
+        3px 3px 0 #ffd3df,
+        5px 5px 12px rgba(180, 70, 100, 0.15);
+
+    animation: titleFloat 4s ease-in-out infinite;
+}
+
+
+.subtitle {
+    font-size: 20px;
+
+    color: #965268;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   AUDIO PLAYER
+   ======================================== */
+
+.audio-box {
+    background: rgba(255, 255, 255, 0.82);
+
+    backdrop-filter: blur(10px);
+
+    border: 3px solid #ffd1df;
+
+    border-radius: 30px;
+
+    padding: 28px;
+
+    margin: 35px auto 50px;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 35px rgba(190, 80, 110, 0.15);
+}
+
+
+.audio-title {
+    font-size: 23px;
+
+    color: #c94f75;
+
+    margin-bottom: 8px;
+}
+
+
+.audio-description {
+    font-size: 15px;
+
+    color: #8e5265;
+
+    margin-bottom: 20px;
+}
+
+
+audio {
+    width: 100%;
+
+    max-width: 600px;
+}
+
+
+/* ========================================
+   LETTER
+   ======================================== */
+
+.letter {
+    background: rgba(255, 255, 255, 0.90);
+
+    backdrop-filter: blur(12px);
+
+    border: 4px solid #ffd1df;
+
+    border-radius: 30px;
+
+    padding: clamp(25px, 6vw, 60px);
+
+    box-shadow:
+        0 20px 60px rgba(170, 70, 100, 0.18);
+}
+
+
+.letter h2 {
+    text-align: center;
+
+    color: #c94f75;
+
+    font-size: 35px;
+
+    margin-top: 0;
+
+    margin-bottom: 40px;
+}
+
+
+.letter p {
+    font-size: 18px;
+
+    line-height: 2;
+
+    margin: 0 0 27px;
+
+    color: #55333d;
+}
+
+
+.letter .opening {
+    font-size: 25px;
+
+    color: #c94f75;
+
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+
+.letter .ending {
+    text-align: center;
+
+    font-size: 22px;
+
+    color: #c94f75;
+
+    margin-top: 50px;
+}
+
+
+/* ========================================
+   CUTE SEPARATORS
+   ======================================== */
+
+.divider {
+    text-align: center;
+
+    color: #df7091;
+
+    font-size: 25px;
+
+    margin: 40px 0;
+}
+
+
+/* ========================================
+   BACK BUTTON
+   ======================================== */
+
+.back {
+    display: block;
+
+    width: fit-content;
+
+    margin: 45px auto 0;
+
+    padding: 15px 28px;
+
+    border-radius: 40px;
+
+    background: linear-gradient(
+        135deg,
+        #ef7f9e,
+        #d95d83
+    );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    border: 3px solid #ffd2df;
+
+    box-shadow:
+        0 10px 25px rgba(200, 70, 110, 0.25);
+
+    transition: 0.3s;
+}
+
+
+.back:hover {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+@keyframes titleFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+@keyframes floatAround {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-40px)
+            rotate(12deg);
+    }
+
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes sway {
+
+    0%, 100% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: 18px;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding-top: 35px;
+    }
+
+    .header-heart {
+        font-size: 60px;
+    }
+
+    .letter {
+        padding: 25px 20px;
+    }
+
+    .letter p {
+        font-size: 17px;
+
+        line-height: 1.9;
+    }
+
+    .decoration {
+        transform: scale(0.8);
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================
+     CUTE FLOATING WORLD
+     ======================================== -->
+
+<div class="decorations">
+
+    <div class="decoration huge"
+         style="left:2%; top:5%; --duration:5s;">
+        💗
+    </div>
+
+    <div class="decoration large"
+         style="left:12%; top:18%; --duration:6s;">
+        🌸
+    </div>
+
+    <div class="decoration medium"
+         style="left:22%; top:7%; --duration:4s;">
+        ✨
+    </div>
+
+    <div class="decoration large"
+         style="left:31%; top:25%; --duration:7s;">
+        🎀
+    </div>
+
+    <div class="decoration medium"
+         style="left:43%; top:5%; --duration:5s;">
+        ♡
+    </div>
+
+    <div class="decoration large"
+         style="left:55%; top:18%; --duration:6s;">
+        🌷
+    </div>
+
+    <div class="decoration huge"
+         style="left:70%; top:5%; --duration:7s;">
+        💕
+    </div>
+
+    <div class="decoration medium"
+         style="left:88%; top:20%; --duration:5s;">
+        ✨
+    </div>
+
+    <div class="decoration large"
+         style="left:94%; top:8%; --duration:6s;">
+        🌸
+    </div>
+
+
+    <div class="decoration medium"
+         style="left:5%; top:38%; --duration:6s;">
+        ⭐
+    </div>
+
+    <div class="decoration large"
+         style="left:94%; top:40%; --duration:5s;">
+        🎀
+    </div>
+
+    <div class="decoration small"
+         style="left:12%; top:55%; --duration:4s;">
+        ♡
+    </div>
+
+    <div class="decoration medium"
+         style="left:90%; top:60%; --duration:7s;">
+        💗
+    </div>
+
+
+    <div class="decoration large"
+         style="left:4%; top:78%; --duration:6s;">
+        🌷
+    </div>
+
+    <div class="decoration huge"
+         style="left:17%; top:88%; --duration:5s;">
+        💕
+    </div>
+
+    <div class="decoration medium"
+         style="left:35%; top:92%; --duration:7s;">
+        ✨
+    </div>
+
+    <div class="decoration large"
+         style="left:55%; top:88%; --duration:5s;">
+        🌸
+    </div>
+
+    <div class="decoration medium"
+         style="left:72%; top:94%; --duration:6s;">
+        ⭐
+    </div>
+
+    <div class="decoration huge"
+         style="left:88%; top:82%; --duration:7s;">
+        💗
+    </div>
+
+
+    <!-- CATS -->
+
+    <div class="decoration large"
+         style="left:4%; top:62%; --duration:8s;">
+        🐱
+    </div>
+
+    <div class="decoration large"
+         style="left:91%; top:28%; --duration:9s;">
+        🐱
+    </div>
+
+    <div class="decoration medium"
+         style="left:80%; top:75%; --duration:7s;">
+        🐈
+    </div>
+
+    <div class="decoration medium"
+         style="left:20%; top:42%; --duration:8s;">
+        🐱
+    </div>
+
+
+    <!-- MORE SPARKLES -->
+
+    <div class="decoration small"
+         style="left:28%; top:50%; --duration:4s;">
+        ✦
+    </div>
+
+    <div class="decoration small"
+         style="left:76%; top:35%; --duration:5s;">
+        ✧
+    </div>
+
+    <div class="decoration small"
+         style="left:48%; top:78%; --duration:4s;">
+        ✦
+    </div>
+
+    <div class="decoration small"
+         style="left:65%; top:50%; --duration:5s;">
+        ✧
+    </div>
+
+</div>
+
+
+<!-- ========================================
+     PAGE
+     ======================================== -->
+
+<main class="page">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="header-heart">
+            💗
+        </div>
+
+        <h1>
+            A Letter For You
+        </h1>
+
+        <p class="subtitle">
+            something i wanted you to have<br>
+            for our five months ♡
+        </p>
+
+    </header>
+
+
+    <!-- ====================================
+         AUDIO
+         ==================================== -->
+
+    <div class="audio-box">
+
+        <div class="audio-title">
+            🎧 listen to me read this to you ♡
+        </div>
+
+        <div class="audio-description">
+            press play first, then read along with me :3
+        </div>
+
+        <!--
+        YOUR AUDIO WILL GO HERE.
+
+        Later, we'll replace "your-audio.mp3"
+        with the name of your recording.
+        -->
+
+        <audio controls>
+            <source src="your-audio.mp3" type="audio/mpeg">
+
+            Your browser doesn't support audio.
+        </audio>
+
+    </div>
+
+
+    <!-- ====================================
+         THE LETTER
+         ==================================== -->
+
+    <article class="letter">
+
+        <h2>
+            happy 5 months my love :3
+        </h2>
+
+
+        <p class="opening">
+            happy 5 months my love :3
+        </p>
+
+
+        <p>
+            five months... i don't know how we've already gotten here.
+            it feels like just yesterday i was some random high idiot
+            ragdolled inside of a chimney, and then somehow that little
+            moment ended up becoming one of the most important things
+            that's ever happened to me &gt;~&lt;
+        </p>
+
+        <p>
+            five months with you feels both so long and so short at the
+            same time. there's been so many memories, so many late nights,
+            so many conversations, so many times we've laughed until we
+            couldn't anymore, and so many moments where i've just sat there
+            and thought about how lucky i am that i met you.
+        </p>
+
+        <p>
+            i've been thinking a lot about us lately, especially because
+            it's been five months now, and i wanted to actually sit down
+            and put everything i feel into words. i know i can be bad at
+            explaining how much you mean to me sometimes, and sometimes i
+            get stuck in my own head and don't know how to say things
+            properly, but i really want you to know just how much i love you.
+            so i decided to make this as long as i possibly could because..
+            you deserve that much and so much more.
+        </p>
+
+
+        <div class="divider">
+            ♡ ✦ ♡ ✦ ♡
+        </div>
+
+
+        <p>
+            i want to start with how we even met, because it's still so
+            fucking funny to me when i think about it xd
+        </p>
+
+        <p>
+            we met one night in meet people across the world. i was high
+            as fuck, i was incredibly shy, and for some reason i was in a
+            chimney.. i don't even know how i ended up there xd, and then
+            you walked over to me &gt;o&lt;
+        </p>
+
+        <p>
+            you were wearing the cat outfit, and i remember seeing you
+            walk over and say hello. i was so quiet because i was high and
+            shy as hell, and honestly i'm still pretty shy sometimes xd.
+            i probably didn't give you much of an impression at first,
+            but that night ended up being one of the best nights of my life
+            simply because it was the night i met <em>you</em>.
+        </p>
+
+        <p>
+            it's so crazy to think about how something so random could lead
+            to all of this. out of every person you could've walked over to
+            that night, you walked over to me. out of every stupid roblox
+            game we could've been playing, we happened to be in that one.
+            and out of every possible night, it happened that night.
+        </p>
+
+        <p>
+            and now five months later, i'm sitting here writing an entire
+            fucking essay about you ^o^
+        </p>
+
+        <p>
+            i wouldn't change that night for anything..
+        </p>
+
+
+        <div class="divider">
+            🌸 ♡ 🌸 ♡ 🌸
+        </div>
+
+
+        <p>
+            i think the first time i really realized i liked you was about
+            a week after we met. we stayed up playing games and talking for
+            what felt like forever. we started getting into deeper
+            conversations, talking about things that weren't just random
+            conversations anymore, and we watched the office together and
+            laughed our asses off.
+        </p>
+
+        <p>
+            somehow we ended up staying awake until morning.
+        </p>
+
+        <p>
+            i remember just feeling so comfortable with you. i didn't want
+            the night to end. i didn't want to stop talking to you. i
+            remember thinking about how easy it felt to just exist around
+            you, even though we'd only known each other for such a short
+            amount of time.
+        </p>
+
+        <p>
+            and that's when i started realizing that you weren't just some
+            person i met online.
+        </p>
+
+        <p>
+            i actually liked you.
+        </p>
+
+        <p>
+            i liked talking to you. i liked hearing what you had to say.
+            i liked spending time with you. i liked how easily you could
+            make me laugh. and more than anything, i liked how i felt when
+            i was with you.
+        </p>
+
+
+        <div class="divider">
+            💗 ✦ 💗 ✦ 💗
+        </div>
+
+
+        <p>
+            then eventually came the first time we said i love you.
+        </p>
+
+        <p>
+            it was shortly after you asked me to be your boyfriend, and i
+            told you i loved you. honestly, i don't think you could've asked
+            me in a better way. i don't even know how to explain how happy
+            i was in that moment. there was something about finally being
+            able to call you my girlfriend that just felt right to me..
+        </p>
+
+        <p>
+            and now i get to look back at that moment and realize that the
+            girl i was so excited to call my girlfriend five months ago is
+            still the person i want beside me now.
+        </p>
+
+
+        <div class="divider">
+            🎀 ♡ 🎀 ♡ 🎀
+        </div>
+
+
+        <p>
+            one of my favourite memories is actually one of those
+            conversations we had when we were still just talking.
+        </p>
+
+        <p>
+            we were both laying down, it was really late at night, and
+            somehow the conversation slowly turned into us getting really
+            close and telling each other things that were much more personal.
+            we talked about trauma, things we'd been through, things that
+            weren't necessarily easy to talk about.
+        </p>
+
+        <p>
+            i remember how vulnerable that felt.
+        </p>
+
+        <p>
+            and i think that was one of the moments where i realized how
+            much i trusted you.
+        </p>
+
+        <p>
+            because being able to tell someone those things isn't easy.
+            letting someone see the parts of you that you normally hide is
+            scary. but with you, i wanted to. i wanted you to know me.
+            not just the funny parts, not just the parts of myself i'm
+            comfortable showing people, but the messy parts too.
+        </p>
+
+        <p>
+            and you've always made me feel like those parts of me don't
+            make me less worthy of being loved.
+        </p>
+
+
+        <div class="divider">
+            🐱 💕 🐱 💕 🐱
+        </div>
+
+
+        <p>
+            there are also so many little things you do that i don't think
+            you even realize how adorable they are.
+        </p>
+
+        <p>
+            one of my favourites is that little noise you make when you're
+            thinking about something. i know it's a chilean thing and a lot
+            of people there do it, but i don't care because when
+            <em>YOU</em> do it, it's the cutest thing ever..
+        </p>
+
+        <p>
+            i don't even know why it makes me so happy c:
+        </p>
+
+        <p>
+            it's just one of those tiny little things that makes me think
+            "that's my girlfriend!"
+        </p>
+
+        <p>
+            there are so many things like that too. little mannerisms,
+            little reactions, the way you talk, the way you get excited
+            about things, the way you react when you're interested in
+            something. i don't think you realize how much i notice those
+            little things.
+        </p>
+
+        <p>
+            and i love them.
+        </p>
+
+        <p>
+            i love the little things just as much as the big things.
+        </p>
+
+
+        <div class="divider">
+            🌷 ✨ 🌷 ✨ 🌷
+        </div>
+
+
+        <p>
+            when it comes to games, one of my favourite things we've done
+            technically wasn't even us playing together.
+        </p>
+
+        <p>
+            i got you to install firewatch, one of my favorite indie games,
+            and i watched you play it.
+        </p>
+
+        <p>
+            and i loved that.
+        </p>
+
+        <p>
+            there was something so nice about watching you experience
+            something that i already loved.. getting to see your reactions,
+            watching you explore everything, and just knowing that something
+            i loved was becoming something you could enjoy too.
+        </p>
+
+        <p>
+            but if i had to choose a game we actually played together,
+            i'd probably say stardew valley.
+        </p>
+
+        <p>
+            there's just something so relaxing about farming, fishing,
+            mining, and doing all the little pointless things together.
+        </p>
+
+        <p>
+            and minecraft too :3
+        </p>
+
+        <p>
+            i love those kinds of games with you because we don't really
+            have to do anything special. we can just exist together. we can
+            build something stupid, wander around, get distracted by
+            something completely unrelated, and somehow that's enough to
+            make me happy.
+        </p>
+
+        <p>
+            i think that's one of the things i've come to love most about
+            being with you.
+        </p>
+
+        <p>
+            i don't need some huge exciting event to feel happy with you.
+            sometimes i just want to sit there and play a stupid game with
+            you while we talk.
+        </p>
+
+        <p>
+            sometimes i just want to stay up way too late.
+        </p>
+
+        <p>
+            sometimes i want to watch something together.
+        </p>
+
+        <p>
+            sometimes i just want to hear your voice.
+        </p>
+
+        <p>
+            and somehow all of those little things mean so much to me.
+        </p>
+
+
+        <div class="divider">
+            💕 🐱 💕 🐱 💕
+        </div>
+
+
+        <p>
+            you also make me feel safe.
+        </p>
+
+        <p>
+            and honestly, this one is difficult to explain because it's not
+            really one specific moment where you made me feel safe.
+        </p>
+
+        <p>
+            you <em>ALWAYS</em> make me feel safe.
+        </p>
+
+        <p>
+            whenever i'm struggling with something, you immediately let me
+            know that you're there for me. you listen to me, you reassure me,
+            you stay on my side, and you make me feel like i don't have to
+            deal with everything alone.
+        </p>
+
+        <p>
+            there have been so many times where i've been struggling with
+            something and you've just been there.
+        </p>
+
+        <p>
+            and i don't think i'll ever be able to properly explain how much
+            that means to me.
+        </p>
+
+        <p>
+            feeling safe with someone is something i don't take for granted.
+        </p>
+
+
+        <div class="divider">
+            ♡ ✦ ♡ ✦ ♡
+        </div>
+
+
+        <p>
+            especially because when i first started talking to you, there
+            were things about myself that i was genuinely scared you would
+            judge me for.
+        </p>
+
+        <p>
+            one of the biggest things was my education and how behind i felt
+            in life.
+        </p>
+
+        <p>
+            i was scared to tell you because i didn't know how you'd see me
+            after you found out. i was scared you'd think i was less
+            intelligent, less capable, or somehow less of a person because
+            i hadn't gone through life the same way other people had.
+        </p>
+
+        <p>
+            but when i finally told you, you were understanding.
+        </p>
+
+        <p>
+            you never made me feel like i was less.
+        </p>
+
+        <p>
+            i still remember you telling me that everyone goes at their own
+            pace.
+        </p>
+
+        <p>
+            and that genuinely stuck with me.
+        </p>
+
+        <p>
+            i think about that sometimes when i'm feeling like i'm behind
+            everyone else.
+        </p>
+
+        <p>
+            because you reminded me that my life isn't a race.
+        </p>
+
+        <p>
+            i don't have to have everything figured out immediately.
+        </p>
+
+        <p>
+            and having someone i love tell me that and actually mean it made
+            me feel so much better.
+        </p>
+
+
+        <div class="divider">
+            🌸 💗 🌸 💗 🌸
+        </div>
+
+
+        <p>
+            there are also things i've learned about myself through these
+            five months.
+        </p>
+
+        <p>
+            one of the biggest things i've realized is that i have a lot of
+            problems with attachment.
+        </p>
+
+        <p>
+            i've realized how easily i can get scared of losing someone i
+            love, how easily my brain can start overthinking things, and how
+            sometimes my own insecurities can make things harder than they
+            need to be.
+        </p>
+
+        <p>
+            and i know those are things i'm going to have to keep working on.
+        </p>
+
+        <p>
+            not because you demanded that i change who i am, but because i
+            want to be better.
+        </p>
+
+        <p>
+            for myself, but also for you.
+        </p>
+
+        <p>
+            i want to be someone who can love you without constantly being
+            controlled by fear.
+        </p>
+
+        <p>
+            i want to be someone who can trust the person he loves (not
+            saying i don’t)
+        </p>
+
+        <p>
+            i want to be someone who can give you the same sense of safety
+            that you give me.
+        </p>
+
+        <p>
+            and i know i'm not going to magically become perfect overnight.
+        </p>
+
+        <p>
+            i'm still going to mess up.
+        </p>
+
+        <p>
+            i'm still going to have moments where i overthink.
+        </p>
+
+        <p>
+            i'm still going to have things i need to work through.
+        </p>
+
+        <p>
+            but i promise i'm going to keep trying.
+        </p>
+
+        <p>
+            because you are worth the effort.
+        </p>
+
+        <p>
+            our relationship is worth the effort.
+        </p>
+
+        <p>
+            and i want to keep growing alongside you instead of letting my
+            fears control me.
+        </p>
+
+
+        <div class="divider">
+            🎀 ✨ 🎀 ✨ 🎀
+        </div>
+
+
+        <p>
+            when i think about the future, one of the biggest things i want
+            is to experience the world with you.
+        </p>
+
+        <p>
+            i want to travel with you.
+        </p>
+
+        <p>
+            i want to see places i've never seen before.
+        </p>
+
+        <p>
+            i want to see places you've never seen before.
+        </p>
+
+        <p>
+            i want to get lost somewhere together and figure it out.
+        </p>
+
+        <p>
+            i want to try foods we've never had.
+        </p>
+
+        <p>
+            i want to take stupid pictures together.
+        </p>
+
+        <p>
+            i want to visit places just because we happened to hear about
+            them.
+        </p>
+
+        <p>
+            and honestly, even if i'm scared or completely out of my comfort
+            zone, i'd be okay as long as you're there with me.
+        </p>
+
+
+        <div class="divider">
+            🌎 💕 🌎 💕 🌎
+        </div>
+
+
+        <p>
+            i want to experience toronto with you.
+        </p>
+
+        <p>
+            i want to show you all the places i like.
+        </p>
+
+        <p>
+            i want to take you around and show you the places that are
+            important to me.
+        </p>
+
+        <p>
+            and i genuinely cannot wait for february when you come over.
+        </p>
+
+        <p>
+            i've thought about it so many times already.
+        </p>
+
+        <p>
+            actually getting to have you here with me.
+        </p>
+
+        <p>
+            not through a screen.
+        </p>
+
+        <p>
+            not through a call.
+        </p>
+
+        <p>
+            not through a game.
+        </p>
+
+        <p>
+            actually being able to wake up and know you're right there.
+        </p>
+
+        <p>
+            being able to go somewhere with you and hold your hand.
+        </p>
+
+        <p>
+            being able to take you around stratford and show you some of my
+            favourite places to go when i'm stressed.
+        </p>
+
+        <p>
+            being able to just exist together in the same place.
+        </p>
+
+        <p>
+            i can't fucking wait for that.
+        </p>
+
+
+        <div class="divider">
+            🐱 ♡ 🐱 ♡ 🐱
+        </div>
+
+
+        <p>
+            i want to show you everything.
+        </p>
+
+        <p>
+            even the stupid little places that probably wouldn't mean
+            anything to anyone else.
+        </p>
+
+        <p>
+            because they're part of my life, and i want you to be part of
+            that too.
+        </p>
+
+        <p>
+            i want to see your reaction to the things i love.
+        </p>
+
+        <p>
+            and i want you to show me the things that you love too.
+        </p>
+
+        <p>
+            i want to see the world through your eyes.
+        </p>
+
+        <p>
+            i want to learn more about you even though we've already gotten
+            so close.
+        </p>
+
+        <p>
+            because somehow, even after five months, i still feel like
+            there's so much more of you that i get to discover.
+        </p>
+
+        <p>
+            and i <em>love</em> that.
+        </p>
+
+        <p>
+            i don't want to ever reach a point where i feel like i know
+            absolutely everything about you.
+        </p>
+
+        <p>
+            i want there to always be another story, another memory, another
+            little habit, another thing you love that i get to learn about.
+        </p>
+
+        <p>
+            because getting to know you has been one of my favorite parts of
+            all of this.
+        </p>
+
+
+        <div class="divider">
+            💗 ✦ 💗 ✦ 💗
+        </div>
+
+
+        <p>
+            you've become such a huge part of my life.
+        </p>
+
+        <p>
+            you're someone i think about when i wake up.
+        </p>
+
+        <p>
+            someone i want to tell things to.
+        </p>
+
+        <p>
+            someone i want to play games with.
+        </p>
+
+        <p>
+            someone i want to make memories with.
+        </p>
+
+        <p>
+            someone i want to hear from when i'm having a shitty day.
+        </p>
+
+        <p>
+            someone i want to celebrate with when something good happens.
+        </p>
+
+        <p>
+            and you're someone i want beside me when life gets difficult too.
+        </p>
+
+
+        <div class="divider">
+            🌷 ♡ 🌷 ♡ 🌷
+        </div>
+
+
+        <p>
+            i don't just love you when everything is easy.
+        </p>
+
+        <p>
+            i love you when things are complicated.
+        </p>
+
+        <p>
+            i love you when we're tired.
+        </p>
+
+        <p>
+            i love you when we're both being stupid.
+        </p>
+
+        <p>
+            i love you when we're laughing.
+        </p>
+
+        <p>
+            i love you when we're talking about serious things at three in
+            the morning.
+        </p>
+
+        <p>
+            i love you when we're doing absolutely nothing.
+        </p>
+
+        <p>
+            i love you in all of those little moments that probably wouldn't
+            look important to anyone else.
+        </p>
+
+        <p>
+            because those are the moments that make up us.
+        </p>
+
+
+        <div class="divider">
+            ✨ ♡ ✨ ♡ ✨
+        </div>
+
+
+        <p>
+            and i think that's what i love most about our relationship.
+        </p>
+
+        <p>
+            it's not just one big moment.
+        </p>
+
+        <p>
+            it's thousands of tiny moments that slowly became something huge.
+        </p>
+
+        <p>
+            you walking up to some random guy in a chimney.
+        </p>
+
+        <p>
+            us saying hello.
+        </p>
+
+        <p>
+            talking late at night.
+        </p>
+
+        <p>
+            staying awake until morning.
+        </p>
+
+        <p>
+            watching the office.
+        </p>
+
+        <p>
+            playing games.
+        </p>
+
+        <p>
+            telling each other things we'd never told other people.
+        </p>
+
+        <p>
+            saying i love you.
+        </p>
+
+        <p>
+            becoming boyfriend and girlfriend.
+        </p>
+
+        <p>
+            having tiy arguments.
+        </p>
+
+        <p>
+            making up.
+        </p>
+
+        <p>
+            laughing.
+        </p>
+
+        <p>
+            crying.
+        </p>
+
+        <p>
+            missing each other.
+        </p>
+
+        <p>
+            making plans.
+        </p>
+
+        <p>
+            talking about the future.
+        </p>
+
+        <p>
+            all of those things brought us here.
+        </p>
+
+        <p>
+            five months.
+        </p>
+
+        <p>
+            and i wouldn't trade any of it for anything.
+        </p>
+
+
+        <div class="divider">
+            🎀 💕 🎀 💕 🎀
+        </div>
+
+
+        <p>
+            i also want you to know that i'm proud of you.
+        </p>
+
+        <p>
+            i'm proud of the person you are.
+        </p>
+
+        <p>
+            i'm proud of how strong you can be.
+        </p>
+
+        <p>
+            i'm proud of the things you've worked through.
+        </p>
+
+        <p>
+            i'm proud of the way you care about people.
+        </p>
+
+        <p>
+            and i'm proud that i get to call you my girlfriend.
+        </p>
+
+        <p>
+            sometimes i genuinely have one of those moments where i look at
+            you and think "how the fuck did i get this lucky?"
+        </p>
+
+        <p>
+            because seriously.
+        </p>
+
+        <p>
+            out of everyone in the world, somehow i found you.
+        </p>
+
+        <p>
+            and you chose me too.
+        </p>
+
+        <p>
+            that's something i'll never take for granted.
+        </p>
+
+
+        <div class="divider">
+            💗 ✦ 💗 ✦ 💗
+        </div>
+
+
+        <p>
+            i don't know exactly what the future is going to look like.
+        </p>
+
+        <p>
+            i don't know where we're going to be a year from now.
+        </p>
+
+        <p>
+            i don't know what cities we'll visit, what games we'll play,
+            what stupid arguments we'll have, what memories we'll make, or
+            how many times we'll stay up until the morning even though we
+            both know we should've gone to sleep hours ago.
+        </p>
+
+        <p>
+            but i know i want to find out.
+        </p>
+
+        <p>
+            with you.
+        </p>
+
+        <p>
+            i want more months.
+        </p>
+
+        <p>
+            i want more late nights.
+        </p>
+
+        <p>
+            more games.
+        </p>
+
+        <p>
+            more conversations.
+        </p>
+
+        <p>
+            more inside jokes.
+        </p>
+
+        <p>
+            more pictures.
+        </p>
+
+        <p>
+            more trips.
+        </p>
+
+        <p>
+            more birthdays.
+        </p>
+
+        <p>
+            more anniversaries.
+        </p>
+
+        <p>
+            more days where we're doing absolutely nothing and somehow
+            having the best time.
+        </p>
+
+
+        <div class="divider">
+            🌸 🌷 🌸 🌷 🌸
+        </div>
+
+
+        <p>
+            i want to keep growing with you.
+        </p>
+
+        <p>
+            i want to keep learning you.
+        </p>
+
+        <p>
+            i want to keep becoming a better person.
+        </p>
+
+        <p>
+            and i want to keep loving you in all the little ways that make
+            you feel loved.
+        </p>
+
+        <p>
+            i know five months probably doesn't sound like a lifetime.
+        </p>
+
+        <p>
+            but you've already left such a massive impact on my life in
+            those five months.
+        </p>
+
+        <p>
+            you've made me happier.
+        </p>
+
+        <p>
+            you've made me feel understood.
+        </p>
+
+        <p>
+            you've made me feel safe.
+        </p>
+
+        <p>
+            you've given me memories that i know i'm going to remember for
+            a very, very long time.
+        </p>
+
+        <p>
+            and you've given me someone i can genuinely look forward to
+            waking up and talking to.
+        </p>
+
+        <p>
+            i don't know if i'll ever be able to put exactly how much i
+            love you into words.
+        </p>
+
+        <p>
+            but i'm going to keep trying anyway.
+        </p>
+
+        <p>
+            because if there's one person who deserves me trying to find
+            the words, it's you.
+        </p>
+
+
+        <div class="divider">
+            💕 🐱 💕 🐱 💕
+        </div>
+
+
+        <p>
+            so...
+        </p>
+
+        <p>
+            happy five months, my love.
+        </p>
+
+        <p>
+            thank you for walking over to the stupid guy stuck in the
+            roblox chimney.
+        </p>
+
+        <p>
+            thank you for saying hello.
+        </p>
+
+        <p>
+            thank you for staying up with me.
+        </p>
+
+        <p>
+            thank you for listening to me.
+        </p>
+
+        <p>
+            thank you for trusting me with the parts of yourself that are
+            difficult to share.
+        </p>
+
+        <p>
+            thank you for making me laugh.
+        </p>
+
+        <p>
+            thank you for making me feel safe.
+        </p>
+
+        <p>
+            thank you for being patient with me.
+        </p>
+
+        <p>
+            thank you for loving me even when i'm not very good at loving
+            myself.
+        </p>
+
+        <p>
+            thank you for choosing me.
+        </p>
+
+        <p>
+            and thank you for being you.
+        </p>
+
+
+        <div class="divider">
+            ♡ ♡ ♡
+        </div>
+
+
+        <p>
+            i love you more than i know how to explain.
+        </p>
+
+        <p>
+            i love your voice.
+        </p>
+
+        <p>
+            i love your little noises.
+        </p>
+
+        <p>
+            i love your laugh.
+        </p>
+
+        <p>
+            i love your personality.
+        </p>
+
+        <p>
+            i love your weird little habits.
+        </p>
+
+        <p>
+            i love talking to you.
+        </p>
+
+        <p>
+            i love playing games with you.
+        </p>
+
+        <p>
+            i love listening to you talk about things you enjoy.
+        </p>
+
+        <p>
+            i love watching you get excited.
+        </p>
+
+        <p>
+            i love learning about you.
+        </p>
+
+        <p>
+            i love missing you, even though missing you fucking sucks,
+            because it reminds me how much i want you here.
+        </p>
+
+        <p>
+            and i love knowing that one day, we're going to have so many
+            memories together that these first five months are going to
+            feel like the beginning of everything.
+        </p>
+
+
+        <div class="divider">
+            🌸 💗 🎀 ✨ 🐱 ✨ 🎀 💗 🌸
+        </div>
+
+
+        <p>
+            i hope you know that you never have to be perfect for me.
+        </p>
+
+        <p>
+            you never have to have everything figured out.
+        </p>
+
+        <p>
+            you never have to pretend you're okay when you're not.
+        </p>
+
+        <p>
+            i want you exactly as you are.
+        </p>
+
+        <p>
+            and i'll keep trying to be the person you deserve beside you.
+        </p>
+
+
+        <p class="ending">
+
+            five months down.<br>
+
+            hopefully so, so many more to go.
+
+            <br><br>
+
+            happy 5 months, rocio&lt;3
+
+            <br><br>
+
+            i love you with all my heart
+
+            <br><br>
+
+            more than the chimney could've ever predicted :3
+
+            <br><br>
+
+            ♡ ♡ ♡
+
+        </p>
+
+    </article>
+
+
+    <!-- ====================================
+         BACK HOME
+         ==================================== -->
+
+    <a
+        href="index.html"
+        class="back"
+    >
+        🏠 back home ♡
+    </a>
+
+
+</main>
+
+</body>
+</html>

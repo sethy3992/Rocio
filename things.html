@@ -1,1 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>things i love about you ♡</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #fff0f6;
+    color: #4a3038;
+    overflow-x: hidden;
+}
+
+/* =========================
+   FLOATING BACKGROUND
+========================= */
+
+.floating {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    animation: floatAround linear infinite;
+    opacity: 0.75;
+}
+
+.heart {
+    font-size: 28px;
+}
+
+.star {
+    font-size: 24px;
+}
+
+.cat {
+    font-size: 34px;
+}
+
+.sparkle {
+    font-size: 20px;
+}
+
+.f1 { left: 4%; top: 15%; animation-duration: 8s; }
+.f2 { left: 90%; top: 20%; animation-duration: 10s; }
+.f3 { left: 12%; top: 55%; animation-duration: 12s; }
+.f4 { left: 85%; top: 65%; animation-duration: 9s; }
+.f5 { left: 50%; top: 8%; animation-duration: 11s; }
+.f6 { left: 72%; top: 40%; animation-duration: 13s; }
+.f7 { left: 25%; top: 80%; animation-duration: 10s; }
+.f8 { left: 94%; top: 85%; animation-duration: 14s; }
+
+@keyframes floatAround {
+
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-25px) rotate(8deg);
+    }
+
+    50% {
+        transform: translateY(10px) rotate(-8deg);
+    }
+
+    75% {
+        transform: translateY(-20px) rotate(6deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+}
+
+/* =========================
+   TOP SECTION
+========================= */
+
+.hero {
+    position: relative;
+    z-index: 2;
+    min-height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 60px 25px;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ffd1e3 0 4%, transparent 5%),
+        radial-gradient(circle at 80% 30%, #ffc1d9 0 3%, transparent 4%),
+        radial-gradient(circle at 30% 80%, #ffd8e8 0 3%, transparent 4%),
+        linear-gradient(135deg, #fff0f6, #ffe1ec);
+}
+
+.hero-cat {
+    font-size: 80px;
+    animation: catBounce 2.5s ease-in-out infinite;
+    filter: drop-shadow(0 8px 8px rgba(100, 40, 60, 0.12));
+}
+
+@keyframes catBounce {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(3deg);
+    }
+
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 75px);
+    margin: 20px 0 10px;
+
+    color: #8e4059;
+
+    text-shadow:
+        3px 3px 0 #ffd1df,
+        0 5px 15px rgba(100, 40, 60, 0.12);
+}
+
+.subtitle {
+    max-width: 700px;
+    font-size: 21px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   LOVE COUNTER
+========================= */
+
+.love-counter {
+    margin-top: 25px;
+
+    background: rgba(255,255,255,0.75);
+    border: 2px solid #f4b1c7;
+
+    padding: 15px 25px;
+    border-radius: 30px;
+
+    box-shadow: 0 10px 30px rgba(100,40,60,0.08);
+
+    animation: gentlePulse 3s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+}
+
+/* =========================
+   LIST
+========================= */
+
+.container {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+    margin: auto;
+
+    padding: 60px 25px 100px;
+}
+
+.love-item {
+
+    position: relative;
+
+    background: rgba(255,255,255,0.92);
+
+    margin: 18px 0;
+    padding: 22px 28px;
+
+    border-radius: 22px;
+
+    border: 2px solid #ffd0df;
+
+    box-shadow:
+        0 8px 25px rgba(100, 40, 60, 0.07);
+
+    font-size: 19px;
+    line-height: 1.7;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    animation: appear 0.7s ease both;
+}
+
+.love-item:hover {
+
+    transform:
+        translateY(-6px)
+        rotate(0.5deg)
+        scale(1.01);
+
+    box-shadow:
+        0 15px 35px rgba(100, 40, 60, 0.14);
+
+}
+
+.love-item::before {
+
+    content: "♡";
+
+    position: absolute;
+
+    left: -13px;
+    top: 18px;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f29ab5;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 5px 12px rgba(100,40,60,0.12);
+
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================
+   RANDOM LITTLE DOODLES
+========================= */
+
+.doodle {
+
+    text-align: center;
+
+    font-size: 35px;
+
+    margin: 35px 0;
+
+    animation:
+        doodleFloat 3s ease-in-out infinite;
+
+}
+
+@keyframes doodleFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-button {
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 50px auto 0;
+
+    padding: 15px 28px;
+
+    background: #d87991;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 8px 20px rgba(100,40,60,0.15);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+
+}
+
+.back-button:hover {
+
+    transform: scale(1.08);
+
+    background: #c9637d;
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    font-size: 20px;
+
+    background: #ffe0eb;
+
+}
+
+.footer-heart {
+
+    font-size: 45px;
+
+    display: inline-block;
+
+    animation:
+        heartbeat 1.5s ease-in-out infinite;
+
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.2);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.15);
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .love-item {
+        font-size: 17px;
+        padding: 20px 22px;
+    }
+
+    .love-item::before {
+        left: -9px;
+    }
+
+    .hero {
+        min-height: 60vh;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     FLOATING DECORATIONS
+========================= -->
+
+<div class="floating heart f1">♡</div>
+<div class="floating star f2">✦</div>
+<div class="floating cat f3">🐱</div>
+<div class="floating sparkle f4">✧</div>
+<div class="floating heart f5">♥</div>
+<div class="floating cat f6">🐾</div>
+<div class="floating star f7">★</div>
+<div class="floating heart f8">♡</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-cat">
+        🐱
+    </div>
+
+    <h1>
+        things i love about you ♡
+    </h1>
+
+    <div class="subtitle">
+        okay so... i tried to make a list of everything i love about you
+        <br>
+        and then i realized there is absolutely no way i'm fitting everything
+        <br>
+        so here's a very long attempt :3
+    </div>
+
+    <div class="love-counter">
+        ♡ 149 little reasons i love you ♡
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LOVE LIST
+========================= -->
+
+<div class="container">
+
+
+<div class="doodle">
+    ♡ 🐱 ✦ ♡
+</div>
+
+
+<div class="love-item">i love the little noise you make when you're thinking</div>
+
+<div class="love-item">i love that you chose me</div>
+
+<div class="love-item">i love your laugh</div>
+
+<div class="love-item">i love playing Stardew Valley with you</div>
+
+<div class="love-item">i love how safe you make me feel</div>
+
+<div class="love-item">i love when you randomly send me something because it reminded you of me</div>
+
+<div class="love-item">i love that our entire relationship started because you walked over to some random idiot stuck in a Roblox chimney</div>
+
+<div class="love-item">i love your sleepy voice</div>
+
+<div class="love-item">i love that you genuinely want to know me</div>
+
+<div class="love-item">i love how passionate you can get about things you love</div>
+
+<div class="love-item">i love that i get to call you my girlfriend</div>
+
+<div class="love-item">i love our stupid conversations</div>
+
+<div class="love-item">i love that you never made me feel like i'm less because i'm behind in life</div>
+
+<div class="love-item">i love watching you get excited</div>
+
+<div class="love-item">i love that i want to experience the world with you instead of experiencing it alone</div>
+
+<div class="love-item">i love your little reactions to things</div>
+
+<div class="love-item">i love that you've seen parts of me that i normally hide</div>
+
+<div class="love-item">i love Minecraft with you</div>
+
+<div class="love-item">i love that something you said months ago can still stick with me</div>
+
+<div class="love-item">i love your sense of humour</div>
+
+<div class="love-item">i love when we're both being completely stupid</div>
+
+<div class="love-item">i love that you make me want to become a better person</div>
+
+<div class="love-item">i love that i want to take stupid pictures with you</div>
+
+<div class="love-item">i love hearing about your day</div>
+
+<div class="love-item">i love that out of everyone in that game, you found me</div>
+
+<div class="love-item">i love how comfortable i feel talking to you</div>
+
+<div class="love-item">i love watching you enjoy something that i already love</div>
+
+<div class="love-item">i love that you make me feel wanted</div>
+
+<div class="love-item">i love when you get distracted</div>
+
+<div class="love-item">i love that i can imagine a future with you</div>
+
+<div class="love-item">i love your creativity</div>
+
+<div class="love-item">i love remembering the first time we said i love you</div>
+
+<div class="love-item">i love that you make me feel like i matter</div>
+
+<div class="love-item">i love listening to you ramble about something you're interested in</div>
+
+<div class="love-item">i love that even doing absolutely nothing with you can feel special</div>
+
+<div class="love-item">i love that you told me everyone goes at their own pace</div>
+
+<div class="love-item">i love your personality</div>
+
+<div class="love-item">i love staying up way too late with you</div>
+
+<div class="love-item">i love that i get to watch you grow</div>
+
+<div class="love-item">i love that you make me excited about the future</div>
+
+<div class="love-item">i love the way you see things</div>
+
+<div class="love-item">i love when you show me something you're excited about</div>
+
+<div class="love-item">i love that you make me feel like i have someone on my side</div>
+
+<div class="love-item">i love Stardew Valley farming, fishing and mining with you</div>
+
+<div class="love-item">i love that our story started with something so stupid</div>
+
+<div class="love-item">i love that i can be completely weird around you</div>
+
+<div class="love-item">i love your voice</div>
+
+<div class="love-item">i love that i want to show you my favourite places</div>
+
+<div class="love-item">i love that you've become such a huge part of my life</div>
+
+<div class="love-item">i love when we say goodnight and somehow keep talking for another two hours</div>
+
+<div class="love-item">i love that you make me feel understood</div>
+
+<div class="love-item">i love Firewatch because i got to watch you experience one of my favourite games</div>
+
+<div class="love-item">i love that you make me want to travel</div>
+
+<div class="love-item">i love your kindness</div>
+
+<div class="love-item">i love when you remember something i've told you</div>
+
+<div class="love-item">i love that i don't have to pretend to be someone else around you</div>
+
+<div class="love-item">i love remembering the first week we knew each other</div>
+
+<div class="love-item">i love that you make me want to experience new things</div>
+
+<div class="love-item">i love that you've changed my life without even realizing it</div>
+
+<div class="love-item">i love getting distracted while we're supposed to be doing something</div>
+
+<div class="love-item">i love that you make me feel important</div>
+
+<div class="love-item">i love your little habits</div>
+
+<div class="love-item">i love that i want you to show me the places that are important to you</div>
+
+<div class="love-item">i love that you still love me after seeing the messy parts of me</div>
+
+<div class="love-item">i love when you get really excited and start talking more</div>
+
+<div class="love-item">i love that i get to keep discovering more of you</div>
+
+<div class="love-item">i love that you make me feel like i can be myself</div>
+
+<div class="love-item">i love watching The Office with you</div>
+
+<div class="love-item">i love that i want more ordinary days with you</div>
+
+<div class="love-item">i love your empathy</div>
+
+<div class="love-item">i love that i can miss you this much</div>
+
+<div class="love-item">i love when you get sleepy but still don't want to stop talking</div>
+
+<div class="love-item">i love that you make me want to work on myself</div>
+
+<div class="love-item">i love that you make people feel heard</div>
+
+<div class="love-item">i love that i want to make memories that we'll laugh about years later</div>
+
+<div class="love-item">i love remembering when you asked me to be your boyfriend</div>
+
+<div class="love-item">i love that you make me feel like i don't have to hide everything</div>
+
+<div class="love-item">i love when something happens and you're immediately the person i want to tell</div>
+
+<div class="love-item">i love that you pay attention to the little things</div>
+
+<div class="love-item">i love that distance hasn't stopped me from feeling close to you</div>
+
+<div class="love-item">i love your little mannerisms</div>
+
+<div class="love-item">i love that i want more late nights with you</div>
+
+<div class="love-item">i love how you can make me think about things differently</div>
+
+<div class="love-item">i love that you've given me memories i never expected to have</div>
+
+<div class="love-item">i love when you're being silly</div>
+
+<div class="love-item">i love that i want to see things through your eyes</div>
+
+<div class="love-item">i love that you always make sure i know you're there for me</div>
+
+<div class="love-item">i love that i get to love you</div>
+
+<div class="love-item">i love our inside jokes</div>
+
+<div class="love-item">i love that i want to experience the boring parts of life with you too</div>
+
+<div class="love-item">i love that you make me feel wanted even from far away</div>
+
+<div class="love-item">i love remembering the first time i realized i liked you</div>
+
+<div class="love-item">i love that you make me happier</div>
+
+<div class="love-item">i love that i want more games with you</div>
+
+<div class="love-item">i love that you care so much about the people you love</div>
+
+<div class="love-item">i love that i can tell you about my day</div>
+
+<div class="love-item">i love that i want to see places i've never seen with you</div>
+
+<div class="love-item">i love that you make me feel like i have someone on my side</div>
+
+<div class="love-item">i love when we laugh until neither of us can anymore</div>
+
+<div class="love-item">i love that you make me want to share my world with you</div>
+
+<div class="love-item">i love that you make me feel safe enough to be vulnerable</div>
+
+<div class="love-item">i love that you never make me feel like i have to deal with everything alone</div>
+
+<div class="love-item">i love that i want more birthdays and anniversaries with you</div>
+
+<div class="love-item">i love when you randomly remember something from a previous conversation</div>
+
+<div class="love-item">i love that i want to keep growing alongside you</div>
+
+<div class="love-item">i love that you're someone i want beside me when life gets difficult</div>
+
+<div class="love-item">i love that you can make ordinary moments memorable</div>
+
+<div class="love-item">i love that you're someone i want beside me when something amazing happens</div>
+
+<div class="love-item">i love your curiosity</div>
+
+<div class="love-item">i love that i get to discover little things about you that i didn't know before</div>
+
+<div class="love-item">i love that you make me feel like i can tell you anything</div>
+
+<div class="love-item">i love that somehow a person i met through a Roblox game became one of the most important people in my life</div>
+
+<div class="love-item">i love that you've taught me things without even trying to teach me</div>
+
+<div class="love-item">i love when neither of us wants to leave a conversation</div>
+
+<div class="love-item">i love that i want to travel the world with you</div>
+
+<div class="love-item">i love that you've made me feel understood in ways i didn't expect</div>
+
+<div class="love-item">i love that you make me want to be someone you can feel safe with too</div>
+
+<div class="love-item">i love when you're being completely chaotic</div>
+
+<div class="love-item">i love that i want you to be part of the little things in my life</div>
+
+<div class="love-item">i love that you've become someone i want to share everything with</div>
+
+<div class="love-item">i love that you're one of the first people i want to talk to when something happens</div>
+
+<div class="love-item">i love that i want more stupid gaming sessions with you</div>
+
+<div class="love-item">i love that you can make me smile without even trying</div>
+
+<div class="love-item">i love that i want to experience everything with you</div>
+
+<div class="love-item">i love that i don't need you to be perfect</div>
+
+<div class="love-item">i love that i want to keep learning you</div>
+
+<div class="love-item">i love the person you are now</div>
+
+<div class="love-item">i love the person you're becoming</div>
+
+<div class="love-item">i love that there will always be another little thing about you for me to discover</div>
+
+<div class="love-item">i love that five months later, i still find new things to love about you</div>
+
+<div class="love-item">i love that our story isn't finished</div>
+
+<div class="love-item">i love all the memories we've already made</div>
+
+<div class="love-item">i love knowing we still have so many memories ahead of us</div>
+
+<div class="love-item">i love that i get to be part of your life</div>
+
+<div class="love-item">i love that you get to be part of mine</div>
+
+<div class="love-item">i love that i chose you</div>
+
+<div class="love-item">i love that you love me</div>
+
+<div class="love-item">i love that you're someone i can call home even when you're far away</div>
+
+<div class="love-item">i love that i can picture you beside me in the future</div>
+
+<div class="love-item">i love that when i think about the future, you're in it</div>
+
+<div class="love-item">i love where we've been</div>
+
+<div class="love-item">i love where we are</div>
+
+<div class="love-item">i love where we're going</div>
+
+<div class="love-item">i love our story</div>
+
+<div class="love-item">i love us</div>
+
+<div class="love-item">i love that i get to call you my favourite person</div>
+
+<div class="love-item">i love that i get to keep making memories with you</div>
+
+<div class="love-item">i love that i get to keep growing with you</div>
+
+<div class="love-item">i love that i get to love you</div>
+
+<div class="love-item">i love that you're you ♡</div>
+
+
+<div class="doodle">
+    🐱 ♡ ✦ 🐾 ♡ 🐱
+</div>
+
+
+<a href="index.html" class="back-button">
+    ← back to the main page
+</a>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-heart">
+        ♡
+    </div>
+
+    <br>
+
+    i could probably make this list 1,000 things long
+
+    <br>
+
+    and i'd still find more things to love about you
+
+    <br><br>
+
+    <strong>happy 5 months, rocio ♡</strong>
+
+</footer>
+
+
+</body>
+</html>

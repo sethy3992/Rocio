@@ -1,1 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Memories ♡</title>
+
+
+<style>
+
+/* ========================================
+   BASIC SETUP
+   ======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #55333d;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            #ffd1e1 0%,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            #ffe0eb 0%,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 15% 90%,
+            #ffd8e7 0%,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 85%,
+            #ffd0e1 0%,
+            transparent 30%
+        ),
+
+        #fff0f6;
+
+    overflow-x: hidden;
+}
+
+
+/* ========================================
+   FLOATING DECORATIONS
+   ======================================== */
+
+.decorations {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 0;
+
+}
+
+
+.decoration {
+
+    position: absolute;
+
+    user-select: none;
+
+    animation:
+
+        floatAround var(--duration)
+        ease-in-out infinite,
+
+        sway 4s
+        ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 4px 6px
+            rgba(160, 70, 100, 0.18)
+        );
+
+    opacity: 0.92;
+
+}
+
+
+.small {
+    font-size: 20px;
+}
+
+
+.medium {
+    font-size: 32px;
+}
+
+
+.large {
+    font-size: 48px;
+}
+
+
+.huge {
+    font-size: 65px;
+}
+
+
+/* ========================================
+   MAIN PAGE
+   ======================================== */
+
+.page {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 60px 25px 100px;
+
+}
+
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.header {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+
+.header-heart {
+
+    font-size: 75px;
+
+    display: inline-block;
+
+    animation:
+        heartbeat 2s
+        ease-in-out infinite;
+
+}
+
+
+h1 {
+
+    font-size:
+        clamp(
+            45px,
+            9vw,
+            80px
+        );
+
+    color: #c94f75;
+
+    margin: 15px 0;
+
+    text-shadow:
+
+        3px 3px 0 #ffd3df,
+
+        5px 5px 12px
+        rgba(180, 70, 100, 0.15);
+
+    animation:
+        titleFloat 4s
+        ease-in-out infinite;
+
+}
+
+
+.subtitle {
+
+    font-size: 20px;
+
+    color: #965268;
+
+    line-height: 1.8;
+
+    max-width: 650px;
+
+    margin: auto;
+
+}
+
+
+/* ========================================
+   MEMORY INTRO
+   ======================================== */
+
+.intro {
+
+    background:
+        rgba(255,255,255,0.82);
+
+    backdrop-filter:
+        blur(10px);
+
+    border:
+        3px solid #ffd1df;
+
+    border-radius: 30px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(190,80,110,0.13);
+
+}
+
+
+.intro p {
+
+    margin: 8px 0;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+}
+
+
+.intro .cute {
+
+    font-size: 30px;
+
+}
+
+
+/* ========================================
+   MEMORY GRID
+   ======================================== */
+
+.memories {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap: 35px;
+
+    align-items: start;
+
+}
+
+
+/* ========================================
+   MEMORY CARD
+   ======================================== */
+
+.memory {
+
+    position: relative;
+
+    background: white;
+
+    padding: 15px 15px 22px;
+
+    border-radius: 12px;
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(150,60,90,0.15),
+
+        0 3px 8px
+        rgba(150,60,90,0.08);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+    animation:
+        cardAppear 0.8s
+        ease both;
+
+}
+
+
+.memory:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+
+.memory:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+
+.memory:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+
+.memory:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+
+.memory:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+
+.memory:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+
+.memory:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+
+/* RANDOM POLAROID ROTATIONS */
+
+.memory:nth-child(odd) {
+
+    transform:
+        rotate(-2deg);
+
+}
+
+
+.memory:nth-child(even) {
+
+    transform:
+        rotate(2deg);
+
+}
+
+
+.memory:nth-child(3n) {
+
+    transform:
+        rotate(-1deg);
+
+}
+
+
+.memory:hover {
+
+    transform:
+        rotate(0deg)
+        translateY(-12px)
+        scale(1.03);
+
+    box-shadow:
+
+        0 25px 45px
+        rgba(150,60,90,0.22);
+
+    z-index: 5;
+
+}
+
+
+/* ========================================
+   IMAGE
+   ======================================== */
+
+.memory img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease;
+
+}
+
+
+.memory:hover img {
+
+    transform:
+        scale(1.025);
+
+}
+
+
+/* ========================================
+   MEMORY TEXT
+   ======================================== */
+
+.memory-info {
+
+    text-align: center;
+
+    padding:
+        18px
+        8px
+        5px;
+
+}
+
+
+.memory-title {
+
+    color: #c94f75;
+
+    font-size: 22px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.memory-description {
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #76505c;
+
+}
+
+
+/* ========================================
+   LITTLE HEART
+   ======================================== */
+
+.memory-heart {
+
+    position: absolute;
+
+    top: -17px;
+
+    right: -12px;
+
+    font-size: 34px;
+
+    animation:
+        tinyHeartbeat 2.5s
+        ease-in-out infinite;
+
+}
+
+
+/* ========================================
+   SPECIAL BIG MEMORY
+   ======================================== */
+
+.memory.featured {
+
+    grid-column:
+        span 2;
+
+}
+
+
+.memory.featured img {
+
+    height: 420px;
+
+}
+
+
+/* ========================================
+   BOTTOM MESSAGE
+   ======================================== */
+
+.bottom-message {
+
+    text-align: center;
+
+    margin-top: 80px;
+
+    padding: 45px 25px;
+
+    background:
+        rgba(255,255,255,0.8);
+
+    backdrop-filter:
+        blur(10px);
+
+    border:
+        3px solid #ffd1df;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(190,80,110,0.13);
+
+}
+
+
+.bottom-message .heart-row {
+
+    font-size: 30px;
+
+    letter-spacing: 8px;
+
+}
+
+
+.bottom-message p {
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    color: #8e5265;
+
+}
+
+
+/* ========================================
+   BACK BUTTON
+   ======================================== */
+
+.back {
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 40px auto 0;
+
+    padding: 15px 30px;
+
+    border-radius: 40px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef7f9e,
+            #d95d83
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    border:
+        3px solid #ffd2df;
+
+    box-shadow:
+        0 10px 25px
+        rgba(200,70,110,0.25);
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.back:hover {
+
+    transform:
+        scale(1.08)
+        rotate(-2deg);
+
+}
+
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+
+@keyframes tinyHeartbeat {
+
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.2) rotate(8deg);
+    }
+
+}
+
+
+@keyframes titleFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+@keyframes floatAround {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-40px)
+            rotate(12deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+}
+
+
+@keyframes sway {
+
+    0%, 100% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: 18px;
+    }
+
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(0.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 700px) {
+
+    .page {
+
+        padding:
+            35px
+            18px
+            70px;
+
+    }
+
+
+    .header-heart {
+
+        font-size: 60px;
+
+    }
+
+
+    .memory.featured {
+
+        grid-column:
+            span 1;
+
+    }
+
+
+    .memory.featured img {
+
+        height: 300px;
+
+    }
+
+
+    .memory img {
+
+        height: 260px;
+
+    }
+
+
+    .decoration {
+
+        transform:
+            scale(0.8);
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================
+     FLOATING DECORATIONS
+     ======================================== -->
+
+<div class="decorations">
+
+
+    <div class="decoration huge"
+         style="left:2%; top:5%; --duration:5s;">
+        💗
+    </div>
+
+
+    <div class="decoration large"
+         style="left:12%; top:18%; --duration:6s;">
+        🌸
+    </div>
+
+
+    <div class="decoration medium"
+         style="left:22%; top:7%; --duration:4s;">
+        ✨
+    </div>
+
+
+    <div class="decoration large"
+         style="left:31%; top:25%; --duration:7s;">
+        🎀
+    </div>
+
+
+    <div class="decoration medium"
+         style="left:43%; top:5%; --duration:5s;">
+        ♡
+    </div>
+
+
+    <div class="decoration large"
+         style="left:55%; top:18%; --duration:6s;">
+        🌷
+    </div>
+
+
+    <div class="decoration huge"
+         style="left:70%; top:5%; --duration:7s;">
+        💕
+    </div>
+
+
+    <div class="decoration medium"
+         style="left:88%; top:20%; --duration:5s;">
+        ✨
+    </div>
+
+
+    <div class="decoration large"
+         style="left:94%; top:8%; --duration:6s;">
+        🌸
+    </div>
+
+
+    <!-- MIDDLE -->
+
+
+    <div class="decoration medium"
+         style="left:5%; top:38%; --duration:6s;">
+        ⭐
+    </div>
+
+
+    <div class="decoration large"
+         style="left:94%; top:40%; --duration:5s;">
+        🎀
+    </div>
+
+
+    <div class="decoration small"
+         style="left:12%; top:55%; --duration:4s;">
+        ♡
+    </div>
+
+
+    <div class="decoration medium"
+         style="left:90%; top:60%; --duration:7s;">
+        💗
+    </div>
+
+
+    <!-- CATS -->
+
+
+    <div class="decoration large"
+         style="left:3%; top:67%; --duration:8s;">
+        🐱
+    </div>
+
+
+    <div class="decoration large"
+         style="left:91%; top:29%; --duration:9s;">
+        🐱
+    </div>
+
+
+    <div class="decoration medium"
+         style="left:80%; top:73%; --duration:7s;">
+        🐈
+    </div>
+
+
+    <div class="decoration medium"
+         style="left:20%; top:43%; --duration:8s;">
+        🐱
+    </div>
+
+
+    <!-- BOTTOM -->
+
+
+    <div class="decoration large"
+         style="left:4%; top:86%; --duration:6s;">
+        🌷
+    </div>
+
+
+    <div class="decoration huge"
+         style="left:17%; top:91%; --duration:5s;">
+        💕
+    </div>
+
+
+    <div class="decoration medium"
+         style="left:35%; top:94%; --duration:7s;">
+        ✨
+    </div>
+
+
+    <div class="decoration large"
+         style="left:55%; top:90%; --duration:5s;">
+        🌸
+    </div>
+
+
+    <div class="decoration medium"
+         style="left:72%; top:94%; --duration:6s;">
+        ⭐
+    </div>
+
+
+    <div class="decoration huge"
+         style="left:88%; top:85%; --duration:7s;">
+        💗
+    </div>
+
+
+    <!-- EXTRA SPARKLES -->
+
+
+    <div class="decoration small"
+         style="left:28%; top:50%; --duration:4s;">
+        ✦
+    </div>
+
+
+    <div class="decoration small"
+         style="left:76%; top:35%; --duration:5s;">
+        ✧
+    </div>
+
+
+    <div class="decoration small"
+         style="left:48%; top:78%; --duration:4s;">
+        ✦
+    </div>
+
+
+    <div class="decoration small"
+         style="left:65%; top:50%; --duration:5s;">
+        ✧
+    </div>
+
+
+</div>
+
+
+<!-- ========================================
+     MAIN CONTENT
+     ======================================== -->
+
+<main class="page">
+
+
+    <!-- ====================================
+         HEADER
+         ==================================== -->
+
+    <header class="header">
+
+
+        <div class="header-heart">
+            💗
+        </div>
+
+
+        <h1>
+            our memories ♡
+        </h1>
+
+
+        <p class="subtitle">
+
+            all the little moments that somehow
+            became something so much bigger :3
+
+        </p>
+
+
+    </header>
+
+
+
+    <!-- ====================================
+         INTRO
+         ==================================== -->
+
+    <section class="intro">
+
+        <div class="cute">
+
+            🌸 ♡ 🐱 ♡ 🌸
+
+        </div>
+
+
+        <p>
+
+            i wanted to make a little place
+            where we could keep our memories.
+
+        </p>
+
+
+        <p>
+
+            some of these might be huge moments,
+            and some might be completely stupid...
+
+        </p>
+
+
+        <p>
+
+            but they're all ours. 💗
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ====================================
+         MEMORY CARDS
+         ==================================== -->
+
+    <section class="memories">
+
+
+        <!-- MEMORY 1 -->
+
+        <div class="memory featured">
+
+
+            <div class="memory-heart">
+                💕
+            </div>
+
+
+            <img
+                src="images/memory1.jpg"
+                alt="A memory of us"
+            >
+
+
+            <div class="memory-info">
+
+
+                <div class="memory-title">
+                    the beginning ♡
+                </div>
+
+
+                <div class="memory-description">
+
+                    the first little pieces
+                    of our story.
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- MEMORY 2 -->
+
+        <div class="memory">
+
+
+            <div class="memory-heart">
+                💗
+            </div>
+
+
+            <img
+                src="images/memory2.jpg"
+                alt="A memory of us"
+            >
+
+
+            <div class="memory-info">
+
+
+                <div class="memory-title">
+                    one of my favourites
+                </div>
+
+
+                <div class="memory-description">
+
+                    one of those moments
+                    i never want to forget.
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- MEMORY 3 -->
+
+        <div class="memory">
+
+
+            <div class="memory-heart">
+                💕
+            </div>
+
+
+            <img
+                src="images/memory3.jpg"
+                alt="A memory of us"
+            >
+
+
+            <div class="memory-info">
+
+
+                <div class="memory-title">
+                    us being us :3
+                </div>
+
+
+                <div class="memory-description">
+
+                    probably something
+                    completely stupid xd
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- MEMORY 4 -->
+
+        <div class="memory">
+
+
+            <div class="memory-heart">
+                🌸
+            </div>
+
+
+            <img
+                src="images/memory4.jpg"
+                alt="A memory of us"
+            >
+
+
+            <div class="memory-info">
+
+
+                <div class="memory-title">
+                    another little moment
+                </div>
+
+
+                <div class="memory-description">
+
+                    something small
+                    that means a lot to me.
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- MEMORY 5 -->
+
+        <div class="memory">
+
+
+            <div class="memory-heart">
+                💗
+            </div>
+
+
+            <img
+                src="images/memory5.jpg"
+                alt="A memory of us"
+            >
+
+
+            <div class="memory-info">
+
+
+                <div class="memory-title">
+                    late nights ♡
+                </div>
+
+
+                <div class="memory-description">
+
+                    another night where
+                    we definitely should've slept.
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- MEMORY 6 -->
+
+        <div class="memory">
+
+
+            <div class="memory-heart">
+                🎀
+            </div>
+
+
+            <img
+                src="images/memory6.jpg"
+                alt="A memory of us"
+            >
+
+
+            <div class="memory-info">
+
+
+                <div class="memory-title">
+                    just us
+                </div>
+
+
+                <div class="memory-description">
+
+                    i don't need a huge event
+                    to love a memory with you.
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- MEMORY 7 -->
+
+        <div class="memory">
+
+
+            <div class="memory-heart">
+                💕
+            </div>
+
+
+            <img
+                src="images/memory7.jpg"
+                alt="A memory of us"
+            >
+
+
+            <div class="memory-info">
+
+
+                <div class="memory-title">
+                    another chapter
+                </div>
+
+
+                <div class="memory-description">
+
+                    another little piece
+                    of our story.
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- MEMORY 8 -->
+
+        <div class="memory">
+
+
+            <div class="memory-heart">
+                🌷
+            </div>
+
+
+            <img
+                src="images/memory8.jpg"
+                alt="A memory of us"
+            >
+
+
+            <div class="memory-info">
+
+
+                <div class="memory-title">
+                    five months ♡
+                </div>
+
+
+                <div class="memory-description">
+
+                    and somehow this is
+                    only the beginning.
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ====================================
+         BOTTOM MESSAGE
+         ==================================== -->
+
+    <section class="bottom-message">
+
+
+        <div class="heart-row">
+
+            ♡ 💗 ♡ 💗 ♡
+
+        </div>
+
+
+        <p>
+
+            i hope we get to fill this page
+            with hundreds more memories.
+
+        </p>
+
+
+        <p>
+
+            five months down...
+
+            <br>
+
+            so many more to go. :3
+
+        </p>
+
+
+        <div class="heart-row">
+
+            🐱 🌸 💕 🌷 🎀
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ====================================
+         BACK BUTTON
+         ==================================== -->
+
+    <a
+        href="index.html"
+        class="back"
+    >
+
+        🏠 back home ♡
+
+    </a>
+
+
+</main>
+
+
+</body>
+
+</html>

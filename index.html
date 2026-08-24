@@ -1,88 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>For Rocio ♡</title>
+<title>For Rocio ♡</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Georgia, serif;
-            background: #fff5f7;
-            color: #4a3038;
-        }
+<style>
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 30px;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        .heart {
-            font-size: 55px;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        h1 {
-            font-size: 60px;
-            margin: 20px 0 10px;
-        }
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
 
-        .subtitle {
-            font-size: 20px;
-            line-height: 1.7;
-        }
+    font-family: Georgia, "Times New Roman", serif;
 
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 14px 25px;
-            background: #d87991;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: 0.3s;
-        }
+    background:
+        radial-gradient(circle at 20% 20%, #ffd6e3 0%, transparent 25%),
+        radial-gradient(circle at 80% 30%, #ffe5ef 0%, transparent 25%),
+        radial-gradient(circle at 30% 80%, #ffe1ec 0%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #ffd4e4 0%, transparent 25%),
+        #fff0f6;
 
-        .button:hover {
-            transform: scale(1.05);
-            background: #c9637d;
-        }
+    color: #542d3a;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-        }
-    </style>
+
+/* =========================
+   FLOATING DECORATIONS
+   ========================= */
+
+.decorations {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+.decoration {
+    position: absolute;
+
+    user-select: none;
+
+    animation:
+        floatAround var(--duration) ease-in-out infinite,
+        sway 4s ease-in-out infinite;
+
+    opacity: 0.9;
+
+    filter: drop-shadow(0 3px 5px rgba(160, 70, 100, 0.15));
+}
+
+
+/* Different sizes */
+
+.small {
+    font-size: 20px;
+}
+
+.medium {
+    font-size: 32px;
+}
+
+.large {
+    font-size: 48px;
+}
+
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+.hero {
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+
+/* Big floating heart */
+
+.big-heart {
+    font-size: 90px;
+
+    animation: heartbeat 2s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 10px 15px rgba(210, 90, 120, 0.25));
+}
+
+
+/* Title */
+
+h1 {
+    margin: 10px 0;
+
+    font-size: clamp(45px, 9vw, 90px);
+
+    color: #c94f75;
+
+    text-shadow:
+        3px 3px 0 #ffd3df,
+        6px 6px 15px rgba(180, 70, 100, 0.15);
+
+    animation: titleFloat 4s ease-in-out infinite;
+}
+
+
+/* Subtitle */
+
+.subtitle {
+    font-size: clamp(18px, 3vw, 25px);
+
+    line-height: 1.7;
+
+    max-width: 650px;
+
+    margin-top: 10px;
+}
+
+
+/* Little anniversary text */
+
+.anniversary {
+    margin-top: 15px;
+
+    font-size: 18px;
+
+    color: #a54865;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   BUTTON
+   ========================= */
+
+.button {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 18px 32px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #ef7f9e,
+        #d95d83
+    );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 10px 25px rgba(200, 70, 110, 0.3);
+
+    transition: all 0.3s ease;
+
+    border: 3px solid #ffd2df;
+}
+
+
+.button:hover {
+    transform: scale(1.12) rotate(-2deg);
+
+    box-shadow:
+        0 15px 35px rgba(200, 70, 110, 0.4);
+}
+
+
+/* =========================
+   BOTTOM MESSAGE
+   ========================= */
+
+.bottom-message {
+    position: absolute;
+
+    bottom: 25px;
+
+    font-size: 15px;
+
+    color: #9b596d;
+
+    animation: fade 3s ease-in-out infinite;
+}
+
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+@keyframes titleFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+@keyframes floatAround {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-35px)
+            rotate(10deg);
+    }
+
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes sway {
+
+    0%, 100% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: 20px;
+    }
+}
+
+
+@keyframes fade {
+
+    0%, 100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .big-heart {
+        font-size: 70px;
+    }
+
+    .decoration {
+        transform: scale(0.8);
+    }
+
+    .button {
+        font-size: 18px;
+
+        padding: 16px 26px;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-    <div class="hero">
 
-        <div class="heart">♡</div>
+<!-- ==================================
+     DECORATIONS
+     ================================== -->
 
-        <h1>Five Months With You</h1>
+<div class="decorations">
 
-        <p class="subtitle">
-            for my favourite person in the entire world,<br>
-            rocio :3
-        </p>
+    <div class="decoration large" style="left:5%; top:10%; --duration:5s;">💗</div>
 
-        <a href="letter.html" class="button">
-            a letter for you ♡
-        </a>
+    <div class="decoration medium" style="left:15%; top:35%; --duration:6s;">✨</div>
+
+    <div class="decoration large" style="left:8%; top:70%; --duration:7s;">🌸</div>
+
+    <div class="decoration small" style="left:25%; top:15%; --duration:4s;">♡</div>
+
+    <div class="decoration medium" style="left:30%; top:80%; --duration:5s;">🎀</div>
+
+    <div class="decoration large" style="left:45%; top:8%; --duration:6s;">⭐</div>
+
+    <div class="decoration small" style="left:55%; top:25%; --duration:5s;">♡</div>
+
+    <div class="decoration medium" style="left:65%; top:12%; --duration:7s;">🌷</div>
+
+    <div class="decoration large" style="left:80%; top:20%; --duration:5s;">💕
 
     </div>
 
-    <footer>
-        made with love by your stupid boyfriend ♡
-    </footer>
+    <div class="decoration medium" style="left:90%; top:45%; --duration:6s;">✨</div>
+
+    <div class="decoration large" style="left:78%; top:70%; --duration:7s;">🎀</div>
+
+    <div class="decoration medium" style="left:60%; top:85%; --duration:5s;">🌸</div>
+
+    <div class="decoration small" style="left:40%; top:90%; --duration:4s;">♡</div>
+
+    <div class="decoration medium" style="left:3%; top:50%; --duration:6s;">⭐</div>
+
+    <div class="decoration large" style="left:92%; top:75%; --duration:5s;">💗</div>
+
+    <div class="decoration medium" style="left:18%; top:90%; --duration:7s;">🌷</div>
+
+    <div class="decoration small" style="left:70%; top:50%; --duration:4s;">♡</div>
+
+    <div class="decoration medium" style="left:48%; top:18%; --duration:6s;">✨</div>
+
+    <div class="decoration large" style="left:85%; top:90%; --duration:5s;">🌸</div>
+
+</div>
+
+
+
+<!-- ==================================
+     MAIN PAGE
+     ================================== -->
+
+<main class="hero">
+
+
+    <div class="big-heart">
+        💗
+    </div>
+
+
+    <div class="anniversary">
+        ♡ 5 MONTHS ♡
+    </div>
+
+
+    <h1>
+        Five Months With You
+    </h1>
+
+
+    <p class="subtitle">
+
+        for my favourite person<br>
+
+        in the entire world,
+
+        <br><br>
+
+        <strong>Rocio :3</strong>
+
+    </p>
+
+
+    <a
+        href="letter.html"
+        class="button"
+    >
+        💌 A Letter For You ♡
+    </a>
+
+
+    <div class="bottom-message">
+
+        made with way too much love ♡
+
+    </div>
+
+
+</main>
+
 
 </body>
 </html>

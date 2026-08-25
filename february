@@ -1,1 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Things to do in February ♡</title>
 
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        font-family: Georgia, serif;
+        background:
+            radial-gradient(circle at 10% 20%, rgba(255, 190, 215, 0.35) 0 3px, transparent 4px),
+            radial-gradient(circle at 80% 10%, rgba(255, 220, 235, 0.5) 0 4px, transparent 5px),
+            linear-gradient(135deg, #fff1f7, #ffe4ef, #fff7fb);
+        background-size: 90px 90px, 130px 130px, 100% 100%;
+        color: #4a3038;
+        overflow-x: hidden;
+    }
+
+    /* =========================
+       FLOATING DECORATIONS
+       ========================= */
+
+    .decor {
+        position: fixed;
+        pointer-events: none;
+        z-index: 0;
+        user-select: none;
+    }
+
+    .heart {
+        position: fixed;
+        font-size: 25px;
+        animation: floatAround linear infinite;
+        opacity: 0.7;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .heart:nth-child(1) {
+        left: 5%;
+        animation-duration: 8s;
+        animation-delay: -2s;
+    }
+
+    .heart:nth-child(2) {
+        left: 18%;
+        animation-duration: 11s;
+        animation-delay: -6s;
+        font-size: 18px;
+    }
+
+    .heart:nth-child(3) {
+        left: 35%;
+        animation-duration: 9s;
+        animation-delay: -4s;
+    }
+
+    .heart:nth-child(4) {
+        left: 55%;
+        animation-duration: 13s;
+        animation-delay: -8s;
+        font-size: 20px;
+    }
+
+    .heart:nth-child(5) {
+        left: 72%;
+        animation-duration: 10s;
+        animation-delay: -3s;
+    }
+
+    .heart:nth-child(6) {
+        left: 90%;
+        animation-duration: 12s;
+        animation-delay: -7s;
+        font-size: 18px;
+    }
+
+    @keyframes floatAround {
+        0% {
+            transform: translateY(110vh) rotate(0deg);
+        }
+
+        50% {
+            transform: translateY(50vh) rotate(180deg) translateX(25px);
+        }
+
+        100% {
+            transform: translateY(-15vh) rotate(360deg) translateX(-20px);
+        }
+    }
+
+    .sparkle {
+        position: fixed;
+        color: #e98baa;
+        font-size: 18px;
+        animation: sparkle 2s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    @keyframes sparkle {
+        0%, 100% {
+            opacity: 0.25;
+            transform: scale(0.7) rotate(0deg);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.4) rotate(180deg);
+        }
+    }
+
+    .sparkle.s1 { top: 12%; left: 7%; }
+    .sparkle.s2 { top: 28%; right: 8%; animation-delay: .5s; }
+    .sparkle.s3 { top: 52%; left: 4%; animation-delay: 1s; }
+    .sparkle.s4 { top: 72%; right: 6%; animation-delay: 1.5s; }
+    .sparkle.s5 { top: 88%; left: 12%; animation-delay: .7s; }
+
+    /* =========================
+       MAIN CONTENT
+       ========================= */
+
+    main {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero {
+        min-height: 85vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 70px 25px 50px;
+        position: relative;
+    }
+
+    .hero::before {
+        content: "♡";
+        position: absolute;
+        font-size: 280px;
+        color: rgba(255, 155, 190, 0.10);
+        z-index: -1;
+        animation: giantHeart 5s ease-in-out infinite;
+    }
+
+    @keyframes giantHeart {
+        0%, 100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.08);
+        }
+    }
+
+    .cat {
+        font-size: 75px;
+        animation: catBounce 2.5s ease-in-out infinite;
+        filter: drop-shadow(0 8px 5px rgba(120, 50, 70, 0.12));
+    }
+
+    @keyframes catBounce {
+        0%, 100% {
+            transform: translateY(0) rotate(-2deg);
+        }
+
+        50% {
+            transform: translateY(-15px) rotate(2deg);
+        }
+    }
+
+    h1 {
+        font-size: clamp(42px, 8vw, 78px);
+        margin: 15px 0 5px;
+        color: #bd5c7b;
+        text-shadow: 3px 3px 0 rgba(255,255,255,.8);
+    }
+
+    .hero-subtitle {
+        font-size: 21px;
+        max-width: 700px;
+        line-height: 1.7;
+        margin-top: 10px;
+    }
+
+    .tiny-note {
+        font-size: 16px;
+        color: #a45c72;
+        margin-top: 15px;
+    }
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 20;
+        text-decoration: none;
+        color: white;
+        background: #d87991;
+        padding: 12px 20px;
+        border-radius: 30px;
+        box-shadow: 0 7px 20px rgba(100, 40, 60, .15);
+        transition: .3s;
+        font-size: 15px;
+    }
+
+    .back-button:hover {
+        transform: scale(1.08) rotate(-2deg);
+        background: #c45f7b;
+    }
+
+    .jump-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin: 30px auto;
+        max-width: 900px;
+        padding: 0 20px;
+    }
+
+    .jump-box a {
+        text-decoration: none;
+        color: #8f405c;
+        background: rgba(255,255,255,.8);
+        border: 2px solid #f1b4c9;
+        padding: 10px 17px;
+        border-radius: 25px;
+        transition: .3s;
+        box-shadow: 0 5px 15px rgba(100,40,60,.08);
+    }
+
+    .jump-box a:hover {
+        transform: translateY(-4px) rotate(-1deg);
+        background: #fff;
+        box-shadow: 0 10px 20px rgba(100,40,60,.14);
+    }
+
+    /* =========================
+       SECTIONS
+       ========================= */
+
+    .section {
+        max-width: 1050px;
+        margin: auto;
+        padding: 80px 25px;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 45px;
+        color: #b95777;
+        margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 17px;
+        margin-bottom: 45px;
+        color: #9b6171;
+    }
+
+    /* =========================
+       CARDS
+       ========================= */
+
+    .card {
+        position: relative;
+        background: rgba(255,255,255,.88);
+        padding: 30px;
+        border-radius: 25px;
+        margin: 25px 0;
+        box-shadow:
+            0 12px 30px rgba(100, 40, 60, .10),
+            inset 0 0 0 2px rgba(255, 190, 210, .4);
+        line-height: 1.8;
+        transition: .35s;
+        overflow: hidden;
+    }
+
+    .card::before {
+        content: "♡";
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        font-size: 45px;
+        color: rgba(220, 110, 145, .12);
+    }
+
+    .card::after {
+        content: "✦";
+        position: absolute;
+        left: 18px;
+        bottom: 10px;
+        font-size: 25px;
+        color: rgba(220, 110, 145, .15);
+    }
+
+    .card:hover {
+        transform: translateY(-6px) rotate(.2deg);
+        box-shadow:
+            0 18px 40px rgba(100, 40, 60, .15),
+            inset 0 0 0 2px rgba(255, 170, 195, .7);
+    }
+
+    .card h3 {
+        color: #bd5c7b;
+        font-size: 27px;
+        margin: 0 0 10px;
+    }
+
+    .address {
+        color: #986073;
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    .description {
+        font-size: 17px;
+    }
+
+    .source-link {
+        display: inline-block;
+        margin: 8px 0 14px;
+        color: #bd5c7b;
+        text-decoration: none;
+        background: #fff0f5;
+        border-radius: 20px;
+        padding: 7px 13px;
+        font-size: 14px;
+        transition: .25s;
+    }
+
+    .source-link:hover {
+        background: #f7d5e1;
+        transform: scale(1.03);
+    }
+
+    /* =========================
+       SPECIAL ACTIVITY CARDS
+       ========================= */
+
+    .activities {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+    }
+
+    .activity {
+        background: rgba(255,255,255,.9);
+        border: 2px solid #f3c3d3;
+        border-radius: 20px;
+        padding: 18px;
+        text-align: center;
+        font-size: 16px;
+        transition: .3s;
+        box-shadow: 0 8px 20px rgba(100,40,60,.08);
+    }
+
+    .activity:hover {
+        transform: translateY(-5px) rotate(-1deg);
+        background: #fff;
+    }
+
+    .activity::before {
+        content: "♡ ";
+        color: #d87991;
+    }
+
+    .niche {
+        background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,232,241,.95));
+    }
+
+    /* =========================
+       DIVIDERS
+       ========================= */
+
+    .divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin: 20px auto;
+        color: #d87991;
+        font-size: 25px;
+    }
+
+    .divider::before,
+    .divider::after {
+        content: "";
+        height: 2px;
+        width: 100px;
+        background: linear-gradient(to right, transparent, #e7a5ba);
+    }
+
+    .divider::after {
+        background: linear-gradient(to left, transparent, #e7a5ba);
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+        text-align: center;
+        padding: 100px 20px 70px;
+        position: relative;
+    }
+
+    footer .big-heart {
+        font-size: 65px;
+        animation: heartbeat 1.5s infinite;
+        display: inline-block;
+    }
+
+    @keyframes heartbeat {
+        0%, 100% {
+            transform: scale(1);
+        }
+
+        15% {
+            transform: scale(1.15);
+        }
+
+        30% {
+            transform: scale(1);
+        }
+
+        45% {
+            transform: scale(1.1);
+        }
+    }
+
+    footer h2 {
+        color: #bd5c7b;
+        font-size: 35px;
+    }
+
+    footer p {
+        font-size: 18px;
+    }
+
+    /* =========================
+       SNOW
+       ========================= */
+
+    .snow {
+        position: fixed;
+        top: -20px;
+        color: white;
+        font-size: 15px;
+        pointer-events: none;
+        z-index: 10;
+        animation: snowFall linear infinite;
+        text-shadow: 0 0 5px rgba(150,100,120,.4);
+    }
+
+    @keyframes snowFall {
+        0% {
+            transform: translateY(-20px) rotate(0deg);
+        }
+
+        100% {
+            transform: translateY(110vh) rotate(360deg);
+        }
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 650px) {
+
+        .back-button {
+            position: absolute;
+        }
+
+        .hero {
+            padding-top: 100px;
+        }
+
+        .cat {
+            font-size: 60px;
+        }
+
+        .section {
+            padding: 55px 15px;
+        }
+
+        .card {
+            padding: 22px;
+        }
+
+        .section-title {
+            font-size: 36px;
+        }
+
+        .jump-box {
+            gap: 8px;
+        }
+
+        .jump-box a {
+            font-size: 14px;
+            padding: 8px 12px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     FLOATING DECORATIONS
+     ========================= -->
+
+<div class="heart">♡</div>
+<div class="heart">♥</div>
+<div class="heart">♡</div>
+<div class="heart">♥</div>
+<div class="heart">♡</div>
+<div class="heart">♥</div>
+
+<div class="sparkle s1">✦</div>
+<div class="sparkle s2">✧</div>
+<div class="sparkle s3">✦</div>
+<div class="sparkle s4">✧</div>
+<div class="sparkle s5">✦</div>
+
+<!-- Snow -->
+<div class="snow" style="left:5%; animation-duration:12s; animation-delay:-2s;">❄</div>
+<div class="snow" style="left:15%; animation-duration:9s; animation-delay:-5s;">✦</div>
+<div class="snow" style="left:25%; animation-duration:14s; animation-delay:-7s;">❄</div>
+<div class="snow" style="left:38%; animation-duration:11s; animation-delay:-4s;">✧</div>
+<div class="snow" style="left:50%; animation-duration:15s; animation-delay:-9s;">❄</div>
+<div class="snow" style="left:63%; animation-duration:10s; animation-delay:-3s;">✦</div>
+<div class="snow" style="left:75%; animation-duration:13s; animation-delay:-6s;">❄</div>
+<div class="snow" style="left:88%; animation-duration:9s; animation-delay:-1s;">✧</div>
+<div class="snow" style="left:96%; animation-duration:14s; animation-delay:-8s;">❄</div>
+
+<main>
+
+<a href="index.html" class="back-button">← back home ♡</a>
+
+<!-- =========================
+     HERO
+     ========================= -->
+
+<section class="hero">
+
+    <div class="cat">ฅ^•ﻌ•^ฅ</div>
+
+    <h1>things to do in february ♡</h1>
+
+    <p class="hero-subtitle">
+        a ridiculously long list of places i wanna take you,
+        things i wanna do with you, and random stuff i think we'd have fun doing together :3
+    </p>
+
+    <p class="tiny-note">
+        because apparently i couldn't just make a normal itinerary xd
+    </p>
+
+</section>
+
+<!-- =========================
+     JUMP LINKS
+     ========================= -->
+
+<div class="jump-box">
+
+    <a href="#toronto">toronto ♡</a>
+    <a href="#niagara">niagara falls ♡</a>
+    <a href="#london">london ♡</a>
+    <a href="#stratford">stratford ♡</a>
+    <a href="#activities">activities ♡</a>
+    <a href="#niche">niche ideas ♡</a>
+
+</div>
+
+
+<!-- =====================================================
+     TORONTO
+     ===================================================== -->
+
+<section class="section" id="toronto">
+
+    <h2 class="section-title">toronto! ♡</h2>
+
+    <div class="divider">♡ ✦ ♡</div>
+
+
+    <div class="card">
+        <h3>cn tower</h3>
+        <div class="address">address: 290 bremner blvd</div>
+        <a class="source-link" href="https://www.cntower.ca/plan-your-visit/getting-here" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            obviously we have to do this one xd i wanna go all the way up and just look at toronto with you
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>ripley's aquarium of canada</h3>
+        <div class="address">address: 288 bremner blvd</div>
+        <a class="source-link" href="https://www.ripleyaquariums.com/canada/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            fishies :3 also i feel like we'd spend an unreasonable amount of time looking at the weirdest looking creatures
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>royal ontario museum</h3>
+        <div class="address">address: 100 queens park</div>
+        <a class="source-link" href="https://www.rom.on.ca/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            dinosaurs, ancient civilizations, fossils, art, natural history and a ridiculous amount of stuff to explore :3
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>art gallery of ontario</h3>
+        <div class="address">address: 317 dundas st w</div>
+        <a class="source-link" href="https://ago.ca/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            this one is good because you like drawing/art, and the building itself is really cool c:
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>distillery historic district</h3>
+        <div class="address">address: 9 trinity st</div>
+        <a class="source-link" href="https://www.destinationtoronto.com/listing/distillery-historic-district-the/32758/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            old industrial buildings, shops, galleries, food and places to wander around together &lt;3
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>kensington market</h3>
+        <a class="source-link" href="https://www.destinationtoronto.com/neighbourhoods/westside/kensington-market/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            probably one of the best places for us. international food, vintage stores, street art, little shops and a less touristy feeling ^-^
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>st. lawrence market</h3>
+        <div class="address">address: 92–95 front st e</div>
+        <a class="source-link" href="https://www.stlawrencemarket.com/about_us" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            food, local vendors and a huge indoor market where we can wander around and try random things together c:
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>allan gardens conservatory</h3>
+        <div class="address">address: 19 horticultural ave</div>
+        <a class="source-link" href="https://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/beaches-gardens-attractions/gardens-and-horticulture/conservatories/allan-gardens-conservatory/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            it's an indoor tropical greenhouse, which makes it particularly nice when we're both freezing our asses off XD
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>casa loma</h3>
+        <div class="address">address: 1 austin terrace</div>
+        <a class="source-link" href="https://casaloma.ca/about/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            CASTLE. in toronto. touristy? yes. extremely cool anyway? also yes.
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>toronto islands</h3>
+        <div class="address">ferry address: jack layton ferry terminal, 9 queens quay w</div>
+        <a class="source-link" href="https://www.toronto.ca/explore-enjoy/toronto-island-ferries/ferry-ticket-passenger-information/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            skyline views, islands, walking trails and a quieter side of toronto
+            <br><br>
+            important february note: winter ferry service is more limited, so we'd have to check the schedule/weather first &gt;~&lt;
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>evergreen brick works</h3>
+        <div class="address">address: 550 bayview ave</div>
+        <a class="source-link" href="https://www.evergreen.ca/evergreen-brick-works/visitor-info/about-us/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            indoor market + old industrial site + nature/trails + random events. i really think we'd like this one c:
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>gardiner museum</h3>
+        <div class="address">address: 111 queen's park</div>
+        <a class="source-link" href="https://www.gardinermuseum.on.ca/visit/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            ceramics museum. particularly good if we want an art/craft kinda date &lt;3
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>bata shoe museum</h3>
+        <div class="address">address: 327 bloor st w</div>
+        <a class="source-link" href="https://batashoemuseum.ca" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            this is such a weirdly specific museum and that's exactly why i like it xd it's literally the history of shoes and how people have worn them across different cultures and time periods
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>little canada</h3>
+        <div class="address">address: 10 dundas st e</div>
+        <a class="source-link" href="https://pocketplanet.ca/toronto/#experience" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            canada recreated as a miniature world. i like this one a LOT for us aaaaa
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>nathan phillips square</h3>
+        <div class="address">address: 100 queen st w</div>
+        <a class="source-link" href="https://www.toronto.ca/news/city-of-toronto-hosting-ninth-annual-toronto-newcomer-day-on-nathan-phillips-square-tomorrow/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            classic toronto landmark, and hopefully we can skate if the rink is open C:
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>winterlicious</h3>
+        <div class="address">location: a bunch of different participating toronto restaurants</div>
+        <a class="source-link" href="https://www.toronto.ca/explore-enjoy/festivals-events/winterlicious/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            winterlicious 2027 is scheduled for january 29–february 11, 2027, which makes this REALLY good timing for us :3
+            <br><br>
+            basically just a giant excuse to go eat at places we probably wouldn't normally go to
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>toronto tea festival</h3>
+        <div class="address">location: toronto reference library / appel salon</div>
+        <a class="source-link" href="https://www.torontoondemand.ca/events/toronto-festivals" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            you like cute/cozy things and you already wanted to cafe hop, so i think this could be really cute if the dates line up with us :3
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>winter stations</h3>
+        <div class="address">location: woodbine beach</div>
+        <a class="source-link" href="https://www.toronto.ca/explore-enjoy/festivals-events/winter-stations/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            this one is really cool because they put giant art installations around the lifeguard stations at woodbine beach, imagine walking around a snowy beach looking at weird giant art together
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>moca toronto</h3>
+        <div class="address">address: 158 sterling rd</div>
+        <a class="source-link" href="https://moca.ca/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            modern/contemporary art in an old industrial building.
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>the power plant contemporary art gallery</h3>
+        <div class="address">address: 231 queens quay w</div>
+        <a class="source-link" href="https://www.thepowerplant.org/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            another contemporary art place, but it's right by the waterfront so we could wander around harbourfront afterwards too
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>textile museum of canada</h3>
+        <div class="address">address: 55 centre ave</div>
+        <a class="source-link" href="https://textilemuseum.ca/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            this is a really niche museum but i think we would actually like it. it's basically art/history through textiles, clothing and fabric from different cultures
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>aga khan museum</h3>
+        <div class="address">address: 77 wynford dr</div>
+        <a class="source-link" href="https://agakhanmuseum.org/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            islamic art, architecture and really pretty exhibits. also apparently the building itself is gorgeous so i'd want to see it even just for that :3
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>mackenzie house</h3>
+        <div class="address">address: 82 bond st</div>
+        <a class="source-link" href="https://www.toronto.ca/explore-enjoy/history-art-culture/museums/mackenzie-house/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            tiny historic house museum in the middle of downtown. it's kinda funny seeing something this old surrounded by modern toronto
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>museum of illusions</h3>
+        <div class="address">address: 132 front st e</div>
+        <a class="source-link" href="https://museumofillusions.ca/toronto/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            optical illusions and weird rooms where everything looks wrong. this would probably make for some really stupid pictures of us XD
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>ripley's believe it or not!</h3>
+        <div class="address">address: 249 queens quay w</div>
+        <a class="source-link" href="https://www.ripleys.com/attractions/ripleys-believe-it-or-not-toronto/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            weird shit.. bizarre objects, random facts. things that make you question why they exist. i feel like we'd have fun here
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>stackt market</h3>
+        <div class="address">address: 28 bathurst st</div>
+        <a class="source-link" href="https://stacktmarket.com/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            this is a bunch of shipping containers turned into little shops, food places, events and random things. i like the idea of just wandering around and seeing what we find
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>the bentway</h3>
+        <div class="address">address: 250 fort york blvd</div>
+        <a class="source-link" href="https://thebentway.ca/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            it's an art/community space built underneath the gardiner expressway. there's usually different installations and events, and in winter they can have skating too!
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>the well</h3>
+        <div class="address">address: 444 front st w</div>
+        <a class="source-link" href="https://thewelltoronto.com/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            it's a giant indoor/outdoor area with shops and food and places to wander around. good for when we have no idea what to do next
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>toronto reference library</h3>
+        <div class="address">address: 789 yonge st</div>
+        <a class="source-link" href="https://www.torontopubliclibrary.ca/trl/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            the building is actually really cool and it's connected to the tea festival stuff too. we could just wander around and look at books
+        </div>
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NIAGARA
+     ===================================================== -->
+
+<section class="section" id="niagara">
+
+    <h2 class="section-title">niagara falls! ♡</h2>
+
+    <div class="divider">✦ ♡ ✦</div>
+
+
+    <div class="card">
+        <h3>journey behind the falls</h3>
+        <div class="address">address: 6650 niagara parkway</div>
+        <a class="source-link" href="https://www.niagaraparks.com/visit/attractions/journey-behind-the-falls/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            we go down into tunnels behind the horseshoe falls. it's year-round, but the lower observation deck closes during winter because of ice :c
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>niagara parks power station + tunnel</h3>
+        <div class="address">address: 7005 niagara parkway</div>
+        <a class="source-link" href="https://www.niagaraparks.com/visit/attractions/niagara-parks-power-station" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            old hydroelectric power station, exhibits and a MASSIVE underground tunnel :3 this is one of the less obvious tourist thingy
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>floral showhouse</h3>
+        <div class="address">address: 7145 niagara parkway</div>
+        <a class="source-link" href="https://www.niagaraparks.com/visit/nature-garden/floral-showhouse/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            another warm tropical escape from february, with orchids too :p
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>niagara skywheel</h3>
+        <div class="address">address: 4960 clifton hill</div>
+        <a class="source-link" href="https://www.cliftonhill.com/attractions/niagara-skywheel" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            heated and cooled enclosed gondolas and views of the falls, and it's open year round :D
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>clifton hill</h3>
+        <div class="address">address: 4960 clifton hill</div>
+        <a class="source-link" href="https://www.cliftonhill.com/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            arcades, rides, mini golf, skywheel and a bunch of other random attractions c:
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>dufferin islands</h3>
+        <div class="address">address: 6345 dufferin isle road</div>
+        <a class="source-link" href="https://www.niagaraparks.com/visit/nature-garden/dufferin-islands/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            short paths, little islands, bridges and wildlife. it's much more of a gentle walk than a hike
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>niagara glen nature centre</h3>
+        <div class="address">address: 3050 niagara parkway</div>
+        <a class="source-link" href="https://niagaraparks.com/explore/explore-the-niagara/nature-activities-in-niagara/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            this is the nature option i'd look at if you become okay with a short winter walk
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>queenston heights</h3>
+        <div class="address">address: 14184 niagara parkway, niagara-on-the-lake</div>
+        <a class="source-link" href="https://www.niagaraparks.com/visit/nature-garden/queenston-heights/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            viewpoints, history, trails and brock's monument without needing to spend the entire day hiking
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>niagara-on-the-lake</h3>
+        <div class="address">address: 122 queen street, niagara-on-the-lake</div>
+        <a class="source-link" href="https://www.niagarafallstourism.com/locations/canada/ontario/niagara-falls/niagara-on-the-lake/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            cute historic town, little shops, cafes, antique stores and pretty streets. this would be really nice if we want a slower day
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>niagara falls butterfly conservatory night?</h3>
+        <div class="description">
+            okay this isn't actually a separate attraction but if they have any special evening event when we're there, I REALLY WANNA DO IT
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>niagara whirlpool</h3>
+        <div class="address">location: niagara parkway</div>
+        <a class="source-link" href="https://www.niagaraparks.com/visit/nature-garden/niagara-whirlpool/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            this is one of those places that's easy to overlook because it's not the falls, but the water doing the giant whirlpool thing is actually really cool xd
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>niagara falls illumination</h3>
+        <div class="address">location: niagara falls</div>
+        <a class="source-link" href="https://www.niagarafallstourism.com/seasons/winter/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            the falls get lit up at night. obviously we've gotta see the falls during the day but seeing them lit up at night would be really pretty too&lt;3
+        </div>
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LONDON
+     ===================================================== -->
+
+<section class="section" id="london">
+
+    <h2 class="section-title">london! ♡</h2>
+
+    <div class="divider">♡ ✧ ♡</div>
+
+
+    <div class="card">
+        <h3>gibraltar weekend market / western fair district</h3>
+        <div class="address">address: 316 rectory st</div>
+        <a class="source-link" href="https://westernfairdistrict.com/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            I like this market :3 there are all types of vendors selling all sorts of things
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>covent garden market</h3>
+        <div class="address">address: 130 king st</div>
+        <a class="source-link" href="https://coventmarket.com/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            indoor food, vendors, and little shops
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>the factory london</h3>
+        <div class="address">address: 100 kellogg lane</div>
+        <a class="source-link" href="https://thefactorylondon.ca/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            trampoline park, arcade, high ropes, warrior course, ziplines, VR and a bunch of other stuff ^-^
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>the club house</h3>
+        <div class="address">address: 100 kellogg lane</div>
+        <a class="source-link" href="https://thefactorylondon.ca/food-drink" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            duckpin bowling, mini golf, simulators and food. basically just a bunch of things to do in one place
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>boler mountain</h3>
+        <div class="address">address: 689 griffith st</div>
+        <a class="source-link" href="https://www.bolermountain.com/contact/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            skiing, snowboarding, tubing and other outdoor stuff. tubing is probably the one i'd prioritize for us&lt;3
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>storybook gardens</h3>
+        <div class="address">address: 1958 storybook lane</div>
+        <a class="source-link" href="https://london.ca/storybookgardens/about-us" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            they have a 250 metre winter skating trail :3
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>junction climbing centre</h3>
+        <div class="address">address: 1030 elias st, unit 2</div>
+        <a class="source-link" href="https://www.junctionclimbing.com/contact-information" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            indoor climbing and beginner friendly options. could be fun to see who falls off the wall first xd
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>museum london</h3>
+        <div class="address">address: 421 ridout st n</div>
+        <a class="source-link" href="https://museumlondon.ca/visit/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            art and london history, and admission is free! &gt;\:D
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>museum of ontario archaeology</h3>
+        <div class="address">address: 1600 attawandaron rd</div>
+        <a class="source-link" href="https://archaeologymuseum.ca/visit-us/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            archaeology, indigenous history and the outdoor lawson site
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>banting house national historic site</h3>
+        <div class="address">address: 442 adelaide st n</div>
+        <a class="source-link" href="https://bantinghousenhs.ca/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            historic site connected to the discovery of insulin, plus banting's life as an artist, scientist and war hero
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>royal canadian regiment museum</h3>
+        <div class="address">address: 701 oxford st e</div>
+        <a class="source-link" href="https://thercrmuseum.ca/en-ca/Visit" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            canadian military history and a genuinely different museum experience
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>grand theatre</h3>
+        <div class="address">address: 471 richmond st</div>
+        <a class="source-link" href="https://www.grandtheatre.com/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            there are actually shows running around our dates, so we should check what's playing when we're there c:
+        </div>
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STRATFORD
+     ===================================================== -->
+
+<section class="section" id="stratford">
+
+    <h2 class="section-title">stratford! ♡</h2>
+
+    <div class="divider">✧ ♡ ✧</div>
+
+
+    <div class="card">
+        <h3>stratford perth museum</h3>
+        <div class="address">address: 4275 huron road / line 34</div>
+        <a class="source-link" href="https://www.stratfordperthmuseum.ca/visit-us/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            local history, exhibits and trails. they also have snowshoeing when conditions allow which could be really funny if neither of us knows what we're doing xd
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>gallery stratford</h3>
+        <div class="address">address: 54 romeo st s</div>
+        <a class="source-link" href="https://gallerystratford.on.ca/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            contemporary canadian art, changing exhibitions and a little sculpture park.
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>chocolate trail</h3>
+        <div class="address">starting point: destination stratford, 47 downie st</div>
+        <a class="source-link" href="https://visitstratford.ca/chocolatetrail/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            this is basically tailor-made for us. walking around downtown collecting different chocolate things from different businesses sounds fun as fuck &gt;3&lt;
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>stratford farmers market</h3>
+        <div class="address">address: stratford agriplex, 353 mccarthy road west</div>
+        <a class="source-link" href="https://visitstratford.ca/events/stratford-farmers-market-2/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            lots of food, baked goods, cheese, meats and artisan vendors c:
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>avon river</h3>
+        <div class="address">location: downtown stratford / avon river waterfront</div>
+        <a class="source-link" href="https://visitstratford.ca/plan-your-visit/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            more of a walk around thing than an attraction, but it's really pretty and i wanna show it to you
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>shakespearean gardens</h3>
+        <div class="address">location: downtown stratford</div>
+        <a class="source-link" href="https://visitstratford.ca/" target="_blank">
+            visit website ↗
+        </a>
+        <div class="description">
+            little gardens and paths right by the river. obviously february means it'll look VERY different from summer, but i still think it'd be nice to walk around.. one of my favorite places to be in stratford
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>stratford antique warehouse</h3>
+        <div class="address">location: downtown stratford</div>
+        <div class="description">
+            i wanna find somewhere like this specifically so we can wander around and point at random old shit and say "we need this"
+        </div>
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ACTIVITIES
+     ===================================================== -->
+
+<section class="section" id="activities">
+
+    <h2 class="section-title">random activities ♡</h2>
+
+    <div class="divider">♡ ✦ ♡ ✦ ♡</div>
+
+    <p class="section-subtitle">
+        things that aren't tied to one specific place but could still turn into a really fun day
+    </p>
+
+    <div class="activities">
+
+        <div class="activity">bowling</div>
+        <div class="activity">arcade</div>
+        <div class="activity">karaoke (when i'm drunk blehhh)</div>
+        <div class="activity">escape rooms</div>
+        <div class="activity">board game cafes</div>
+        <div class="activity">independent cinemas</div>
+        <div class="activity">art workshops</div>
+        <div class="activity">pottery painting</div>
+        <div class="activity">thrift shopping</div>
+        <div class="activity">antique shopping</div>
+        <div class="activity">bookstores</div>
+        <div class="activity">record stores</div>
+        <div class="activity">climbing</div>
+        <div class="activity">restaurants</div>
+        <div class="activity">cafe hopping</div>
+        <div class="activity">live music</div>
+        <div class="activity">concerts</div>
+        <div class="activity">theatre</div>
+        <div class="activity">stargazing</div>
+        <div class="activity">winter walks</div>
+        <div class="activity">ice skating</div>
+        <div class="activity">mini golf</div>
+        <div class="activity">pool</div>
+        <div class="activity">ping pong</div>
+        <div class="activity">baking</div>
+        <div class="activity">photo scavenger hunts</div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NICHE IDEAS
+     ===================================================== -->
+
+<section class="section" id="niche">
+
+    <h2 class="section-title">more niche ideas :3</h2>
+
+    <div class="divider">✦ ♡ ✦ ♡ ✦</div>
+
+    <p class="section-subtitle">
+        because apparently i couldn't stop at the giant list above
+    </p>
+
+    <div class="activities">
+
+        <div class="activity niche">take stupid photobooth pictures together</div>
+
+        <div class="activity niche">go into a random bookstore and pick a book for each other</div>
+
+        <div class="activity niche">find the weirdest item in a thrift store and buy it for each other</div>
+
+        <div class="activity niche">make a little scrapbook together</div>
+
+        <div class="activity niche">go to a craft store and give each other a $10 budget to buy something for the other person</div>
+
+        <div class="activity niche">make our own little food tour</div>
+
+        <div class="activity niche">go on a "we have $20 each, let's see what stupid stuff we can buy" date</div>
+
+        <div class="activity niche">find random public art and take pictures with it</div>
+
+        <div class="activity niche">go somewhere and draw each other</div>
+
+        <div class="activity niche">pick random snacks neither of us has tried</div>
+
+        <div class="activity niche">make a playlist together while we're out</div>
+
+        <div class="activity niche">take pictures of things that remind us of each other</div>
+
+        <div class="activity niche">find a random little café and stay there for way too long</div>
+
+        <div class="activity niche">go on a winter photo walk</div>
+
+        <div class="activity niche">find somewhere cozy and just talk for hours</div>
+
+        <div class="activity niche">go somewhere neither of us has planned and just wander around</div>
+
+        <div class="activity niche">get matching stupid souvenirs</div>
+
+        <div class="activity niche">buy each other a mystery gift for under $10</div>
+
+        <div class="activity niche">have a "who can find the weirdest thing" competition</div>
+
+        <div class="activity niche">find a vending machine and let each other pick something</div>
+
+        <div class="activity niche">go to a comic/game shop and look at everything</div>
+
+        <div class="activity niche">find a random event happening that day and just go</div>
+
+        <div class="activity niche">make a little "our first Toronto day" photo album</div>
+
+        <div class="activity niche">recreate one of our Roblox avatars as a drawing</div>
+
+        <div class="activity niche">find somewhere with a really pretty view and just sit there together</div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+    <div class="big-heart">♡</div>
+
+    <h2>i can't wait for february :3</h2>
+
+    <p>
+        i just wanna spend time with you and make a stupid amount of memories together
+    </p>
+
+    <p>
+        ♡ ♡ ♡
+    </p>
+
+    <p>
+        no matter what we end up doing, i'm happy as long as i'm doing it with you
+    </p>
+
+    <div class="cat">ฅ^•ﻌ•^ฅ</div>
+
+</footer>
+
+</main>
+
+</body>
+</html>
